@@ -1,0 +1,275 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} {% trans "G-Billing" %} | {% trans "Expense Category Manangement" %} {% endblock title %}
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+		<!--breadcrumb-->
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+         <div class="breadcrumb-title pe-3">{% trans "Home" %}</div>
+         <div class="ps-3">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb mb-0 p-0">
+                  <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">{% trans "Manage Expense Category" %}</li>
+               </ol>
+            </nav>
+         </div>
+ 
+      </div>
+      <!--end breadcrumb-->
+      <div class="card">
+         <div class="card-body p-4">
+            <h5 class="card-title">{% trans "Existing Expense Categories" %}</h5>
+            <hr>
+                  <div class="form-body mt-4">
+              <div class="row">
+                <div class="col-lg-8">
+                      <div class="border border-3 p-4 rounded">
+                        <table id="unitTable" class="table table-striped table-bordered dataTable" style="width: 100%;"
+                        role="grid" aria-describedby="example_info">
+                        <thead>
+                           <tr role="row">
+                              <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                 aria-sort="ascending" aria-label="Name: activate to sort column descending"
+                                 style="width: 40px;">{% trans "ID" %}</th>
+                              <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                 aria-label="Position: activate to sort column ascending" style="width: 150px;">
+                                 {% trans "Expense Type" %}</th>
+                                 <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                 aria-label="Position: activate to sort column ascending" style="width: 100px;">
+                                 {% trans "Actions" %}</th>
+
+                              
+
+
+                           </tr>
+                        </thead>
+                        <tbody id="tBody">
+
+                           {% for t in units %}
+
+                           <tr role="row" class="odd">
+                              <td class="sorting_1">#{{t.id}}</td>
+                              <td>{{t.name}}</td>
+                              <td>
+                                 <input type="button" class="btn btn-warning  btn-edit" value='{% trans "Edit" %}' data-sid="{{t.id}}" /> 
+                                 <input type="button" class="btn btn-danger  btn-del" value='{% trans "Delete" %}' data-sid="{{t.id}}" />
+                                 
+                             </td>
+                            
+
+                           </tr>
+                           {% endfor %}
+
+                        </tbody>
+                        <tfoot>
+                           <tr>
+                            <th rowspan="1" colspan="1">{% trans "ID" %}</th>
+                            <th rowspan="1" colspan="1">{% trans "Expense Type" %}</th>
+                            <th rowspan="1" colspan="1">{% trans "Actions" %}</th>
+
+                           </tr>
+                        </tfoot>
+                     </table>
+              
+                </div>
+                </div>
+                <div class="col-lg-4">
+                  <form method="post" action=".">
+                     {% csrf_token %}
+                <div class="border border-3 p-4 rounded">
+                         <div class="row g-3">
+                           <input type="hidden" name="unitId" id="unitId">
+                     <div class="col-12">
+                      <label for="inputProductTags" class="form-label">{% trans "Expense Type" %}</label>
+                      <input type="text" class="form-control" id="unitName"  name="name" placeholder="Enter expense type">
+                     </div>
+                     <div class="col-12">
+                        <label for="inputProductTags" class="form-label">{% trans "Is Enabled" %}</label>
+                        <input class="form-check-input" name="is_enabled" type="checkbox" id="isEnabled">
+                       </div>
+                    
+
+                     <div class="col-12">
+                        <div class="d-grid">
+                            <button type="button"   id="btnSave" class="btn btn-light">{% trans "Add" %}</button>
+                        </div>
+                     </div>
+                  </div> 
+               </div>
+               </form>
+               </div>
+             </div><!--end row-->
+          </div>
+         </div>
+      </div>
+   
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+
+
+<script src="/static/ebilling/js/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+
+<script type="text/javascript">
+
+
+   $("#btnSave").click(function () {
+       output = ""
+       let unitId = $("#unitId").val();
+       let unitName = $("#unitName").val();
+       let isEnabled = $("#isEnabled").is(':checked');
+       let csr = $("input[name=csrfmiddlewaretoken").val();
+       if (unitName == "") {
+           alert("{% trans "Expense Type Name Can't Be Empty" %}!")
+       }
+       else {
+           mydata = {unitId:unitId, name: unitName, isEnabled: isEnabled, csrfmiddlewaretoken: csr };
+           $.ajax({
+               url: "{% url 'ebilling:addExpenseType' %}",
+               method: "POST",
+               data: mydata,
+               success: function (data) {
+                   x = data.units;
+                   if (data.status == 201) {
+                       alertify.set('notifier', 'position', 'top-right');
+                       alertify.success("{% trans "New Unit Added" %}");
+                       for ( i = 0; i < x.length; i++) {
+                           output += `
+                           <tr role="row" class="odd">
+                              <td> #${x[i].id}</td>
+                               <td> ${x[i].name}</td>
+                               <td>
+                                   <input type="button" class="btn btn-warning btn-edit"  value='{% trans "Edit" %}' data-sid="${x[i].id}" /> 
+                                   <input type="button" class="btn btn-danger  btn-del" value='{% trans "Delete" %}' data-sid="${x[i].id}" />
+                               </td>
+                           </tr>`;
+                       }
+                   }
+                   if (data.status == 200) {
+                       alertify.set('notifier', 'position', 'top-right');
+                       alertify.success("{% trans "Data Updated" %}");
+                       for ( i = 0; i < x.length; i++) {
+                           output += `
+                           <tr role="row" class="odd">
+                              <td># ${x[i].id}</td>
+                               <td> ${x[i].name}</td>
+                               <td>
+                                   <input type="button" class="btn btn-warning  btn-edit" value='{% trans "Edit" %}' data-sid="${x[i].id}" /> 
+                                   <input type="button" class="btn btn-danger  btn-del" value='{% trans "Delete" %}' data-sid="${x[i].id}" />
+                               </td>
+                           </tr>`;
+                       }
+                   }
+                
+                   $("#tBody").html(output);
+                   $("#unitId").val('');
+                   $("form")[0].reset();
+                  
+                   if (data.status == 400) {
+                       alertify.set('notifier', 'position', 'top-right');
+                       alertify.error("{% trans "Something went wrong" %}!");
+                       $("#unitId").val('');
+                       $("form")[0].reset();
+                   }
+               }
+
+           });
+       }
+   })
+
+   // Edit Data
+   $("#tBody").on("click",".btn-edit",function(){
+       let id = $(this).attr("data-sid");
+       let csr=$("input[name=csrfmiddlewaretoken").val();
+       mydata={sid:id,csrfmiddlewaretoken:csr};
+       mythis=this;
+       $.ajax({
+               url: "{% url 'ebilling:editExpenseType' %}",
+               method: "POST",
+               data: mydata,
+               dataType:"json",
+               success: function (data) {
+                  
+                   $("#unitId").val(data.id);
+                   $("#unitName").val(data.name);
+                   if(data.is_enabled == true){
+                       $("#isEnabled").prop('checked', true);
+                   }
+                   
+                   if (data.status == 400) {
+                       alertify.set('notifier', 'position', 'top-right');
+                       alertify.error("{% trans "Something went wrong" %}!");
+                   }
+                 
+               }
+
+           });
+
+   });
+
+
+
+
+   // Delete Data
+   $("#tBody").on("click",".btn-del",function(){
+       let id = $(this).attr("data-sid");
+       let csr=$("input[name=csrfmiddlewaretoken").val();
+       mydata={sid:id,csrfmiddlewaretoken:csr};
+       mythis=this;
+       $.ajax({
+               url: "{% url 'ebilling:deleteExpenseType' %}",
+               method: "POST",
+               data: mydata,
+               success: function (data) {
+                   x = data.units;
+                   if (data.status == 200) {
+                       alertify.set('notifier', 'position', 'top-right');
+                       alertify.success("{% trans "Data Deleted" %}!");
+                       $(mythis).closest("tr").fadeOut();
+                   }
+                   if (data.status == 400) {
+                       alertify.set('notifier', 'position', 'top-right');
+                       alertify.error("{% trans "Something went wrong" %}!");
+                   }
+               }
+
+           });
+
+   });
+
+
+</script>
+
+
+{% endblock content %}

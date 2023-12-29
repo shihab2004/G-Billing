@@ -1,0 +1,280 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} {% trans "G-Billing" %} | {% trans "Update Company Details" %} {% endblock title %}
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+         <!--breadcrumb-->
+         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">{% trans "Company" %}</div>
+            <div class="ps-3">
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb mb-0 p-0">
+                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                     </li>
+                     <li class="breadcrumb-item active" aria-current="page">{% trans "Update Company Details" %}</li>
+                  </ol>
+               </nav>
+            </div>
+
+         </div>
+         <!--end breadcrumb-->
+
+
+         <div class="container">
+            <div class="main-body">
+               <div class="row">
+                  <div class="col-lg-4">
+                     <div class="card">
+                        <div class="card-body">
+                           <div class="d-flex flex-column align-items-center text-center">
+                              <img src="/media/{{company.logo}}" alt="Company Logo" class="rounded-circle p-1 "
+                                 width="110">
+                              <div class="mt-3">
+                                 <h4>{{company.name}}</h4>
+                                 <p class="mb-1">{{company.pan_no}}</p>
+                                 <p class="font-size-sm">{{company.address}}, {{company.country}}</p>
+                                 <!-- <button class="btn btn-light">Follow</button>
+                                 <button class="btn btn-light">Message</button> -->
+                              </div>
+                           </div>
+                           <hr class="my-4" />
+                           <ul class="list-group list-group-flush">
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                 <h6 class="mb-0">{% trans "Email" %} </h6>
+                                 <span class="text-white">{{company.email}}</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                 <h6 class="mb-0">{% trans "Website" %}</h6>
+                                 <span class="text-white">{{company.website}}</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                 <h6 class="mb-0">{% trans "PAN/VAT No" %}.</h6>
+                                 <span class="text-white">{{company.pan_no}}</span>
+                              </li>
+
+
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                 <h6 class="mb-0">{% trans "Reg. No." %}</h6>
+                                 <span class="text-white">{{company.reg_no}}</span>
+                              </li>
+
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                 <h6 class="mb-0">{% trans "Reg. Date" %}</h6>
+                                 <span class="text-white">{{company.reg_date}}</span>
+                              </li>
+
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                 <h6 class="mb-0">{% trans "Phone" %}</h6>
+                                 <span class="text-white">{{company.phone}}</span>
+                              </li>
+
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                 <h6 class="mb-0">{% trans "City" %}</h6>
+                                 <span class="text-white">{{company.city}}</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                 <h6 class="mb-0">{% trans "District" %}</h6>
+                                 <span class="text-white">{{company.district}}</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                 <h6 class="mb-0">{% trans "Province" %}</h6>
+                                 <span class="text-white">{{company.province}}</span>
+                              </li>
+
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                 <h6 class="mb-0">{% trans "Pin Code" %}</h6>
+                                 <span class="text-white">{{company.pincode}}</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                 <h6 class="mb-0">{% trans "Paper Size" %}</h6>
+                                 <span class="text-white">{{company.paper_size}}</span>
+                              </li>
+
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-8">
+                     <form method="post" action="." enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="card">
+
+                           <div class="card-body">
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "Company Name" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+
+                                    <input type="text" name="name" required class="form-control"
+                                       value="{{company.name}}" />
+                                 </div>
+                              </div>
+                              <input type="hidden" name="cid" readonly value="{{company.id}}" />
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "Email" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="email" name="email" class="form-control" value="{{company.email}}" />
+                                 </div>
+                              </div>
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "Phone" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="number" required name="phone" class="form-control"
+                                       value="{{company.phone}}" />
+                                 </div>
+                              </div>
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "Website" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="text" name="website" class="form-control"
+                                       value="{{company.website}}" />
+                                 </div>
+                              </div>
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "PAN/VAT No" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="text" required name="pan_no" class="form-control"
+                                       value="{{company.pan_no}}" />
+                                 </div>
+                              </div>
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "Reg. No." %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="text" name="reg_no" class="form-control" value="{{company.reg_no}}" />
+                                 </div>
+                              </div>
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "Reg. Date" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="text" name="reg_date" class="form-control"
+                                       value="{{formattedDate}}" />
+                                 </div>
+                              </div>
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "City" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="text" name="city" required class="form-control"
+                                       value="{{company.city}}" />
+                                 </div>
+                              </div>
+
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "District" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="text" name="district" class="form-control"
+                                       value="{{company.district}}" />
+                                 </div>
+                              </div>
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "Province" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="text" name="province" class="form-control"
+                                       value="{{company.province}}" />
+                                 </div>
+                              </div>
+
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "Pin Code" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="number" name="pincode" class="form-control"
+                                       value="{{company.pincode}}" />
+                                 </div>
+                              </div>
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "Address" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="text" name="address" class="form-control"
+                                       value="{{company.address}}" />
+                                 </div>
+                              </div>
+
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "Country" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="text" readonly disabled class="form-control"
+                                       value="{{company.country}}" />
+                                 </div>
+                              </div>
+                              <div class="row mb-3">
+                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">{% trans "Company Logo" %}</h6>
+                                 </div>
+                                 <div class="col-sm-9">
+                                    <input type="file" name="logo" class="form-control" />
+                                 </div>
+                              </div>
+
+
+                              <div class="row">
+                                 <div class="col-sm-3"></div>
+                                 <div class="col-sm-9">
+                                    <input type="submit" class="btn btn-light px-4" value="{% trans "Save Changes" %}" />
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+
+
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+
+{% endblock content %}

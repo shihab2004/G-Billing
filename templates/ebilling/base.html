@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    {% load i18n %}
+<title>{% block title %} {% trans "E-Billing" %} | {% trans "GMC-Nepal" %}{% endblock title %}</title>
+{% include "ebilling/Head.html" %}
+
+<body class="bg-theme bg-theme7">
+    {% block content %}{% endblock content %}
+    {% include "ebilling/Scripts.html" %}
+</body>
+
+</html>

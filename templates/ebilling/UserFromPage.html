@@ -1,0 +1,165 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} {% translate "G-Billing" %} | {{title}} {% endblock title %}
+{% block content %}
+
+<style>
+    .form-select option {
+    background-color: #067068;
+}
+</style>
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+		<!--breadcrumb-->
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+         <div class="breadcrumb-title pe-3">{% translate "Home" %}</div>
+         <div class="ps-3">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb mb-0 p-0">
+                  <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">User</li>
+               </ol>
+            </nav>
+         </div>
+ 
+      </div>
+      <!--end breadcrumb-->
+
+   
+      <div class="card border-top border-0 border-4 border-white">
+        <div class="card-body p-5">
+            <div class="card-title d-flex align-items-center">
+                <div><i class="bx bxs-user me-1 font-22 text-white"></i>
+                </div>
+                <h5 class="mb-0 text-white">{{title}}</h5>
+            </div>
+            <hr>
+          
+            <form class="row g-3"  method="post" action="?{{action}}" >
+                {% csrf_token %}
+                <div class="col-md-6">
+                    <label for="inputFirstName" class="form-label">{% translate "First Name" %}</label>
+                    <input type="text" class="form-control" value="{{data.first_name}}" name="first_name" required placeholder="{% translate "First Name" %}..." id="inputFirstName">
+                </div>
+           
+                <div class="col-md-6">
+                    <label for="inputLastName" class="form-label">{% translate "Last Name" %}</label>
+                    <input type="text" name="last_name"  value="{{data.last_name}}" placeholder="{% translate "Last Name" %}..." class="form-control" id="inputLastName">
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="inputPassword" class="form-label">{% translate "User Name" %}.</label>
+                    <input type="text" required name="username" value="{{data.username}}" placeholder="{% translate "User Name" %}..." class="form-control" id="inputPassword">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputEmail" class="form-label">{% translate "email" %}</label>
+                    <input type="email"  name="email" value="{{data.email}}"  placeholder="{% translate "Enter email" %}..." class="form-control" id="inputEmail">
+                </div>
+                
+            
+                {% if  updateStatus %}
+                
+                <div class="col-md-6">
+                    <label for="inputPassword" class="form-label">{% translate "Old Password" %}</label>
+                    <input type="password" name="old_password" placeholder="{% translate "Enter Your Old Password" %}..." class="form-control" id="inputPassword">
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="inputPassword" class="form-label">{% translate "New Password" %}</label>
+                    <input type="password" name="new_password1"  placeholder="{% translate "Enter New Password" %}..." class="form-control" id="inputPassword">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword" class="form-label">{% translate "New Password confirmation" %}</label>
+                    <input type="password" name="new_password2"  placeholder="{% translate "Enter New Password again" %}..." class="form-control" id="inputPassword">
+                </div>
+
+
+                {% else %}
+
+                <div class="col-md-6">
+                    <label for="inputPassword" class="form-label">{% translate "Password" %}</label>
+                    <input type="password" name="password1" required  placeholder="{% translate "Enter Password" %}..." class="form-control" id="inputPassword">
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="inputPassword" class="form-label">{% translate "Password confirmation" %}</label>
+                    <input type="password"  name="password2" required placeholder="{% translate "Enter Password again" %}..." class="form-control" id="inputPassword">
+                </div>
+
+
+                {% endif %}
+
+
+             
+                <div class="mx-2 mt-5 col-md-3 form-check">
+                    <input {% if data.is_active %}checked {% endif %} name="is_active"  type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">{% translate "User Active Status" %}</label>
+                </div>
+                        
+                
+
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">{% translate "Permission" %}</label>
+
+                    {% if data.is_staff %}
+
+                    <h6>System admin has all permission</h6>
+
+                    {% else %}
+
+                        <select  required multiple id="inputState" name="permission" class="form-select">
+                    
+                            {% for p in  permission %}
+                            <option {% if p in data.permission  %} selected {% endif %} value="{{p.task}}">{{p.task}}</option>
+
+                            {% endfor %}
+
+                        </select>
+                    {% endif %}
+                    
+                </div>
+
+                
+                <div class="col-12">
+                    <button type="submit" class="btn btn-light px-5">{% translate "Save" %}</button>
+                </div>
+
+              
+            </form>
+        </div>
+    </div>
+
+
+
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+
+{% endblock content %}

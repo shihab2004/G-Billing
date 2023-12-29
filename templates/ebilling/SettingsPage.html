@@ -1,0 +1,94 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} {% trans "G-Billing" %} | {% trans "Settings" %} {% endblock title %}
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+         <!--breadcrumb-->
+         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">{% trans "Home" %}</div>
+            <div class="ps-3">
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb mb-0 p-0">
+                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                     </li>
+                     <li class="breadcrumb-item active" aria-current="page">{% trans "Settings" %}</li>
+                  </ol>
+               </nav>
+            </div>
+
+         </div>
+         <!--end breadcrumb-->
+
+
+         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-4">
+            <div class="col">
+               <div class="card">
+                  <img src="/static/ebilling/images/gallery/01.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <h5 class="card-title">{% trans "TAX" %}</h5>
+                     <p class="card-text">{% trans "Fixed, normal inclusive and compound tax rates" %}..</p> <a href="{% url 'ebilling:taxes' %}" class="btn btn-light">View Taxs</a>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card">
+                  <img src="/static/ebilling/images/gallery/02.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <h5 class="card-title">{% trans "Card title" %}</h5>
+                     <p class="card-text">{% trans "Some quick example text to build on the card title and make up the bulk of the card's content" %}.</p> <a href="javascript:;" class="btn btn-light">{% trans "Go somewhere" %}</a>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card">
+                  <img src="/static/ebilling/images/gallery/03.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <h5 class="card-title">{% trans "Card title" %}</h5>
+                     <p class="card-text"> {% trans "Some quick example text to build on the card title and make up the bulk of the card's content" %}.</p> <a href="javascript:;" class="btn btn-light">{% trans "Go somewhere" %}</a>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card">
+                  <img src="/static/ebilling/images/gallery/04.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <h5 class="card-title">{% trans "Card title" %}</h5>
+                     <p class="card-text">{% trans "Some quick example text to build on the card title and make up the bulk of the card's content" %}.</p> <a href="javascript:;" class="btn btn-light">{% trans "Go somewhere" %}</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+
+{% endblock content %}

@@ -1,0 +1,625 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} 
+{% if product %}
+{% trans "E-Billing" %} | {% trans "Edit Sales Bill" %}
+{% else %}
+{% trans "E-Billing" %} |  {% trans "Draft New Sales " %}
+{% endif %}
+{% endblock title %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+		<!--breadcrumb-->
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+         <div class="breadcrumb-title pe-3">{% trans "Home" %}</div>
+         <div class="ps-3">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb mb-0 p-0">
+                  <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">{% trans "Sales Bill" %}</li>
+               </ol>
+            </nav>
+         </div>
+ 
+      </div>
+      <!--end breadcrumb-->
+
+      {% if product %}
+
+      <div></div>
+
+      {% else %}
+
+       <div class="card">
+         <div class="card-body p-4">
+            <h5 >{% trans "Sales Bill Information" %}</h5>
+            <hr>
+            <form  method="post" action="." enctype="multipart/form-data">
+               {% csrf_token %}
+                  <div class="form-body mt-4">
+              <div class="row">
+                <div class="col-lg-12">
+                      <div class="border border-3 p-4 rounded">
+
+
+                        <div class="mb-3">
+                           <div class="row g-3">
+                           <div class="col-md-3">
+                              <label for="inputVendor" class="form-label" style="font-weight: bold;color:white;" >{% trans "Purchase Type" %}*</label>
+                              <select   name="purchaseType" id="purchaseType" class="form-select" id="inputVendor">
+                                 <option value="VAT">{% trans "VAT" %}</option>
+                                 <option value="Non VAT">{% trans "Non VAT" %}</option>
+                                 <option value="Bill Of Supply">{% trans "Bill Of Supply" %}</option>
+                                </select>
+                             </div>
+                             <div class="col-md-2">
+                              <label for="inputProductTitle" class="form-label" style="font-weight: bold;color:white;" >{% trans "Bill Data" %}</label>
+                              <input type="text"  class="form-control" placeholder="dd/mm/yyyy" name="billDate">
+                             </div>
+
+
+                             <div class="col-md-3">
+                              <label for="inputVendor" class="form-label" style="font-weight: bold;color:white;" >{% trans "Supplier Name" %} *</label>
+                              <select   name="supplierName" class="form-select" id="supplierName">
+                                 {% for s in suppliers %}
+                                 <option value="{{s.id}}">{{s.company_name}}</option>
+                                 {% endfor %}
+                                </select>
+                             </div>
+
+                             <div class="col-md-2">
+                              <label for="inputVendor" class="form-label" style="font-weight: bold;color:white;" >{% trans "Payment Terms" %}</label>
+                              <select   name="paymentTerms" id="paymentTerms"  class="form-select" >
+                                 <option value=""></option>
+                                            <option value="15">15</option>
+                                            <option value="180">180</option>
+                                            <option value="30">30</option>
+                                            <option value="60">60</option>
+                                </select>
+                             </div>
+                             <div class="col-md-2">
+                              <label for="inputProductTitle" class="form-label" style="font-weight: bold;color:white;" >{% trans "Due Data" %}</label>
+                              <input type="text"  class="form-control" placeholder="dd/mm/yyyy" name="dueDate">
+                             </div>
+                          
+                          </div>
+                        </div>
+
+     
+
+
+                        <div class="mb-3">
+                           <div class="row g-3">
+                           <div class="col-md-3">
+                              <label for="inputVendor" class="form-label "  style="font-weight: bold;color:white;" >{% trans "Place Of Supply" %}</label>
+                              <input type="text"  class="form-control" placeholder="Enter district name..." name="placeOfSupply" >
+                             </div>
+                             <div class="col-md-2">
+                              <label for="inputProductTitle" class="form-label" style="font-weight: bold;color:white;" >{% trans "Purchase Bill No" %}.</label>
+                              <input type="text"  class="form-control" name="purchaseBillNo" placeholder="" >
+                             </div>
+
+
+                             <div class="col-md-2">
+                              <label for="inputProductTitle" class="form-label" style="font-weight: bold;color:white;" >{% trans "Purchase Order No" %}.</label>
+                              <input type="text"  class="form-control" name="purchaseOrderNo" placeholder="">
+                             </div>
+
+                         
+                             <div class="col-md-2">
+                              <label for="inputProductTitle" class="form-label" style="font-weight: bold;color:white;" >{% trans "Purchase Order Data" %}</label>
+                              <input type="text"  class="form-control" placeholder="dd/mm/yyyy" name="purchaseOrderDate">
+                             </div>
+                          
+                             <div class="col-md-3">
+                              <label for="inputProductTitle" class="form-label" style="font-weight: bold;color:white;" >{% trans "E-Way Bill No" %}.</label>
+                              <input type="text"  class="form-control" name="eWayBillNo" placeholder="" >
+                             </div>
+
+                          </div>
+                        </div>
+            
+
+
+
+
+              
+
+                       </div>
+
+                       <hr/>
+                       <h5 >Particulars</h5>  <input type="button" id="btnAdd" class="btn btn-primary para" value="{% trans "Add New" %}" />
+                       <hr/>
+                       <div class="border border-3 p-4 rounded bg-secondary">
+
+                        <table id="tblData" class="table mb-0">
+                           <thead class="table-dark">
+                               <tr> 
+                                   <th>{% trans "Item Name" %}</th>
+                                   <th>{% trans "Quantity" %}</th>
+                                   <th>{% trans "Unit" %}</th>
+                                   <th>{% trans "Price/Unit" %}</th>
+                                   <th>{% trans "Disc(%)" %}</th>
+                                   <th>{% trans "Tax(%)" %}</th>
+                                   <th>{% trans "Amount" %}</th>
+                                   <th class="tdaction">{% trans "Action" %}</th>
+                               </tr>
+                           </thead>
+                           <tbody> 
+                           </tbody>
+                           <tfoot>
+                              <tr>
+                                 <td colspan="3"  aria-hidden="true"></td>
+                                 <td colspan="3" style="color:white;" >{% trans "SUBTOTAL(रु)" %}</td>
+                                 <td colspan="2" class='subTotalAmount' id="subTotalAmount" style="font-weight: bold;color:white;" >00.00</td>
+                              </tr>
+                              <tr>
+                                 <td colspan="3" aria-hidden="true"></td>
+                                 <td colspan="3" style="color:white;" >{% trans "TAX 13%(रु)" %}</td>
+                                 <td colspan="2"  class='vatAmount' id="vatAmount"  style="font-weight: bold;color:white;" >00.00</td>
+                              </tr>
+                              <tr>
+                                 <td colspan="3" aria-hidden="true" ></td>
+                                 <td colspan="3" style="font-weight: bold;color:white;" >{% trans "GRAND TOTAL(रु)" %}</td>
+                                 <td colspan="2"  class='grandTotalAmount'  id="grandTotalAmount"   style="font-weight: bold;color:white;" >00.00</td>
+                              </tr>
+                           </tfoot>
+                       </table>
+                       </div>
+
+
+
+                    
+                </div>
+
+
+
+                <div class="col-lg-12">
+                  <div class="border border-3 p-4 rounded">
+
+
+                     <div class="mb-3">
+                        <div class="row g-3">
+
+                  <div class="col-md-3">
+                     <label for="validationCustom04" class="form-label">{% trans "Pay Mode" %}</label>
+                     <select class="form-select"  name="pay_mode" id="payMode" onchange="disableRefNo()"  required="">
+                        <option value="None" data-select2-id="6">{% trans "Please Select" %}</option>
+                        <option value="Cash">{% trans "Cash" %}</option>
+                        <option value="Cheque">{% trans "Cheque" %}</option>
+                        <option value="Voucher">{% trans "Voucher" %}</option>
+                        <option value="DD">{% trans "Demand Draft" %}</option>
+                        <option value="Wallet">{% trans "Mobile Wallet" %}</option>
+                        <option value="Bank">{% trans "Bank Transfer" %}</option>
+                     </select>
+
+                  </div>
+
+                    <div class="col-md-3">
+                     <label for="inputProductTitle" class="form-label" style="color:white;" >{% trans "Transaction ID" %}</label>
+                     <input type="text" id="transactionID"  class="form-control" name="transactionID" placeholder="" >
+                    
+                    </div>
+
+                    <div class="col-md-3">
+                     <label for="inputProductTitle" class="form-label" style="color:white;" >{% trans "Amount Paid" %}</label>
+                     <input type="number" id="amountPaid"  class="form-control" name="amountPaid" placeholder="" >
+                    
+                    </div>
+
+                    <div class="col-md-3">
+                     <label for="inputProductTitle" class="form-label" style="font-weight: bold;color:white;" >{% trans "Balance" %}</label>
+                     <input type="number" id="balance" disabled readonly class="form-control" name="balance" placeholder="" >
+                    
+                    </div>
+
+
+
+                
+</div></div>
+
+
+
+
+<div class="col-md-12">
+   <label for="validationCustom05" class="form-label">{% trans "Remark" %}</label>
+   <textarea class="textarea form-control" name="remark" id="form-message" cols="5" rows="3"></textarea>                                    </div>
+
+</div>
+
+
+<div class="col-md-3 ">
+                    
+   <button type="button" id="draftPurchseBtn"  class="btn btn-light"><i class="lni lni-save"></i> {% trans "Save" %}</button>
+
+</div>
+
+</div>
+
+
+
+
+
+                  </div>
+
+
+
+
+
+              
+             </div>
+            </form>
+          </div>
+         </div> 
+   
+{% endif %}
+
+
+
+   
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+   var emptyRow = "<tr><td colspan='8' class='text-center'> No particulars added</td></tr>";
+
+
+var emptyNewRow = "<tr class='trNewRow'>"; 
+        emptyNewRow = emptyNewRow + "    <td class='tdItemName'>";
+        emptyNewRow = emptyNewRow + "        <select  required name='productName' id='productName' class='form-select' >{% for s in products %}<option data-unit='{{s.unit.name}}'  data-pp='{{s.purchase_price}}'   data-vat='{{s.vat}}'  data-discount='{{s.discount}}'  value='{{s.name}}'>{{s.name}}</option>{% endfor %} </select>";                   
+        emptyNewRow = emptyNewRow + "    </td>";
+        emptyNewRow = emptyNewRow + "<td class='tdQty'><input type='text' name='txtQty'    id='txtQty' class='form-control txtQty' placeholder='{% trans "Enter quanity" %}'/></td>";
+        emptyNewRow = emptyNewRow + "<td class='tdUnit'><input type='text'  id='txtUnit' class='form-control txtUnit' placeholder='{% trans "Enter unit" %}'/></td>";
+        emptyNewRow = emptyNewRow + "<td class='tdPP'><input type='text' id='txtPP'  class='form-control txtPP' placeholder='{% trans "Enter price/unit" %}'/></td>";
+        emptyNewRow = emptyNewRow + "    <td class='tdDiscount'>";
+        emptyNewRow = emptyNewRow + "        <input type='text' id='txtDiscount'   class='form-control txtDiscount' placeholder='{% trans "Enter discount(%)" %}'/>";
+        emptyNewRow = emptyNewRow + "    </td>";
+        emptyNewRow = emptyNewRow + "    <td class='tdVat'>";
+        emptyNewRow = emptyNewRow + "        <input type='text' id='txtVat' class='form-control txtVat' placeholder='{% trans "Enter vat(%)" %}'/>";
+        emptyNewRow = emptyNewRow + "    </td>";
+        emptyNewRow = emptyNewRow + "<td class='tdAmount'><input type='text' id='txtAmount' class='form-control txtAmount' disabled /></td>";
+        emptyNewRow = emptyNewRow + "    <td class='tdAction'>";
+        emptyNewRow = emptyNewRow + "        <button class='btn btn-sm btn-success btn-save'> {% trans "Save" %}</button>";
+        emptyNewRow = emptyNewRow + "        <button class='btn btn-sm btn-success btn-cancel'> {% trans "Cancel" %}</button>";
+        emptyNewRow = emptyNewRow + "    </td>";
+        emptyNewRow = emptyNewRow + "</tr>";
+
+
+     //   emptyNewRow = emptyNewRow + " <td class='tdAction' > <button type='button' class='btn btn-light btn-save'><i class='lni lni-save'></i></button> <button type='button' class='btn btn-light btn-cancel'><i class='bx bx-user me-0'></i></button></td>";
+
+
+
+
+
+   var rowButtons ="<button class='btn btn-success btn-sm btn-edit' > {% trans "Edit" %} </button>  <button class='btn btn-danger btn-sm' > {% trans "Delete" %} </button> ";
+   var rowUpdateButtons ="<button class='btn btn-success btn-sm btn-save' > {% trans "Update" %} </button>  <button class='btn btn-danger btn-sm btn-save' > {% trans "Cancel" %} </button> ";
+
+   $(document).ready(function () {
+      
+       $("#tblData tbody").append(emptyRow); // adding empty row on page load 
+       
+       $("#btnAdd").click(function () { 
+         
+           if ($("#tblData tbody").children().children().length == 1) {
+               $("#tblData tbody").html("");
+           }
+           
+
+           $("#tblData tbody").append(emptyNewRow);
+           var v= $('#productName option:selected').data('vat');
+            var unit = $('#productName option:selected').data('unit');
+            var pp= $('#productName option:selected').data('pp');
+            var discount = $('#productName option:selected').data('discount');
+            console.log(v);
+            console.log(pp);
+            $('#txtQty').val(1);
+            $('#txtUnit').val(unit);
+            $('#txtPP').val(pp);
+            $('#txtDiscount').val(discount);
+            $('#txtVat').val(v);
+            
+            $('#txtAmount').val(1*pp);
+           
+       });
+      
+
+        
+       
+       $('#tblData').on('click', '.btn-save', function () {
+           const itemName =  $(this).parent().parent().find("#productName").val();
+           
+          
+            $(this).parent().parent().find(".tdItemName").html(""+itemName+""); 
+         // $(this).parent().parent().find(".tdItemName").html(" <select  required name='productName[]' disabled id='productName' class='form-select' >{% for s in products %}<option data-unit='{{s.unit.name}}'  data-pp='{{s.purchase_price}}'   data-vat='{{s.vat}}'  data-discount='{{s.discount}}'  {% if s.name == '"+itemName+"'  %} selected {% endif %}  value='{{s.name}}'>{{s.name}}</option>{% endfor %} </select>"); 
+           const qty =  $(this).parent().parent().find("#txtQty").val();
+           $(this).parent().parent().find(".tdQty").html(""+qty+"");
+
+           const unit =  $(this).parent().parent().find("#txtUnit").val();
+           $(this).parent().parent().find(".tdUnit").html(""+unit+"");
+           const pp =  $(this).parent().parent().find("#txtPP").val();
+           $(this).parent().parent().find(".tdPP").html(""+pp+"");
+           const discount =  $(this).parent().parent().find("#txtDiscount").val();
+           $(this).parent().parent().find(".tdDiscount").html(""+discount+"");
+
+           const vat =  $(this).parent().parent().find("#txtVat").val();
+           $(this).parent().parent().find(".tdVat").html(""+vat+"");
+
+           const amount =  $(this).parent().parent().find("#txtAmount").val();
+
+
+           $(this).parent().parent().find(".tdAmount").html(""+getFinalAmount(qty,pp,discount)+"");
+
+
+
+           $(this).parent().parent().find(".tdAction").html(rowButtons);
+
+           var getSubTotalAmount =  $("tfoot .subTotalAmount").text();
+
+         
+           console.log(getSubTotalAmount);
+
+
+           var subTotalAmountUpdated=(parseFloat(getSubTotalAmount)+parseFloat(getFinalAmount(qty,pp,discount))).toFixed(2);
+           $("tfoot .subTotalAmount").text(subTotalAmountUpdated);
+           var vatAmt =  $("tfoot .vatAmount").text();
+           var vatAmountUpdated=(parseFloat(getVatAmount(subTotalAmountUpdated,vat))+parseFloat(vatAmt)).toFixed(2);
+           $("tfoot .vatAmount").text(vatAmountUpdated);
+
+           var grandTotalAmt =  $("tfoot .grandTotalAmount").text();
+           var grandUpdatedTotalAmount=(parseFloat(getGrandTotalAmount(subTotalAmountUpdated,vatAmountUpdated))+parseFloat(grandTotalAmt)).toFixed(2);
+
+           $("tfoot .grandTotalAmount").text(grandUpdatedTotalAmount);
+
+           $("#balance").val(grandUpdatedTotalAmount);
+
+          
+       });
+        
+       
+      function getFinalAmount(qty,pp,discount){
+         let amount = parseInt(qty)*parseInt(pp);
+         let finalAmount= amount - (amount * parseInt(discount))/100;
+         return finalAmount;
+      }
+
+      function getVatAmount(amount,vat){
+         var vAmount= (amount*parseFloat(vat))/100;
+         return vAmount;
+      }
+
+      function getGrandTotalAmount(amountSub,taxAmount){
+         return amountSub+taxAmount;
+      }
+
+
+       $('#tblData').on('click', '.btn-danger', function () { // registering function for delete button  
+           $(this).parent().parent().remove();
+           if ($("#tblData tbody").children().children().length == 0) {
+               $("#tblData tbody").append(emptyRow);
+           }
+       });
+       
+
+       $('#tblData').on('click', '.btn-cancel', function () { 
+           $(this).parent().parent().remove();
+       });
+       $('#tblData').on('click', '.btn-edit', function () { 
+
+         const itemName =  $(this).parent().parent().find("#tdItemName").html();
+
+
+
+           $(this).parent().parent().find(".tdItemName").html("<select  required name='productName' id='productName' class='form-select' >{% for s in products %}<option data-unit='{{s.unit.name}}'  data-pp='{{s.purchase_price}}'   data-vat='{{s.vat}}'  data-discount='{{s.discount}}'  {% if s.name == '"+itemName+"'  %} selected {% endif %}  value='{{s.name}}'>{{s.name}}</option>{% endfor %} </select>"); 
+
+         
+           const qty =$(this).parent().parent().find(".tdQty").html();
+
+           $(this).parent().parent().find(".tdQty").html("<input type='text' name='txtQty' value='"+qty+"'   id='txtQty' class='form-control txtQty' placeholder='{% trans "Enter quanity" %}'/>"); 
+
+
+           const unit =$(this).parent().parent().find(".tdUnit").html();
+
+         $(this).parent().parent().find(".tdUnit").html("<input type='text' name='txtUnit' value='"+unit+"'   id='txtUnit' class='form-control txtUnit' placeholder='{% trans "Enter unit" %}'/>"); 
+
+
+
+         const pp =$(this).parent().parent().find(".tdPP").html();
+
+$(this).parent().parent().find(".tdPP").html("<input type='number' name='txtPP' value='"+pp+"'   id='txtPP' class='form-control txtPP' placeholder='{% trans "Enter price/unit" %}'/>"); 
+
+const discount =$(this).parent().parent().find(".tdDiscount").html();
+
+$(this).parent().parent().find(".tdDiscount").html("<input type='number' name='txtDiscount' value='"+discount+"'   id='txtDiscount' class='form-control txtDiscount' placeholder='{% trans "Enter Discount" %}'/>"); 
+
+
+
+
+           const vat =$(this).parent().parent().find(".tdVat").html();
+
+           $(this).parent().parent().find(".tdVat").html("<input type='number'  name='txtVat' id='txtVat'  value='"+vat+"' class='form-control txtVat' placeholder='{% trans "Enter tax" %}'/>"); 
+          
+          
+       
+           const amount =$(this).parent().parent().find(".tdAmount").html();
+
+           $(this).parent().parent().find(".tdAmount").html(amount); 
+          
+          
+          
+           $(this).parent().parent().find(".tdAction").html(rowUpdateButtons);
+           
+           
+       });
+
+
+
+
+$("#draftPurchseBtn").click(function () {
+      
+
+       let csr = $("input[name=csrfmiddlewaretoken").val();
+       let purchaseType = $("#purchaseType").val();
+       let billDate = $("input[name=billDate").val();
+     
+       let supplierName = $("#supplierName").val();
+       let paymentTerms = $("#paymentTerms").val();
+       let dueDate = $("input[name=dueDate").val();
+       let placeOfSupply = $("input[name=placeOfSupply").val();
+       let purchaseBillNo = $("input[name=purchaseBillNo").val();
+       let purchaseOrderDate = $("input[name=purchaseOrderDate").val();
+       let purchaseOrderNo = $("input[name=purchaseOrderNo").val();
+       let eWayBillNo = $("input[name=eWayBillNo").val();
+      let payMode=$("#payMode").val();
+      let ref_no=$("#transactionID").val();
+      let amountPaid=$("#amountPaid").val();
+      let balance= $("#balance").val();
+       let remark = $("#remark").val();
+
+
+       
+       
+       
+       
+
+
+      let particularData=[]
+       $('#tblData tr').each(function() {
+         var singleProduct=[]
+    var name = $(this).find(".tdItemName").html();    
+    var qty = $(this).find(".tdQty").html();    
+         var unit =  $(this).find(".tdUnit").html();    
+         var pp=  $(this).find(".tdPP").html();    
+         var discount=  $(this).find(".tdDiscount").html();    
+         var tax =   $(this).find(".tdVat").html();    
+         var amount =  $(this).find(".tdAmount").html();    
+    singleProduct.push(name);
+    singleProduct.push(qty);
+    singleProduct.push(unit);
+    singleProduct.push(pp);
+    singleProduct.push(discount);
+    singleProduct.push(tax);
+    singleProduct.push(amount);
+    particularData.push(singleProduct);
+ },
+ 
+
+ );
+
+
+particularData= particularData.slice(1);
+
+if(particularData.length != 0){
+
+           mydata = { purchaseType:purchaseType,billDate:billDate, supplierName:supplierName ,paymentTerms:paymentTerms ,dueDate:dueDate,
+            placeOfSupply:placeOfSupply,purchaseBillNo:purchaseBillNo,purchaseOrderDate:purchaseOrderDate,purchaseOrderNo:purchaseOrderNo ,
+            eWayBillNo:eWayBillNo,payMode:payMode,ref_no:ref_no,amountPaid:amountPaid,balance:balance,remark:remark, "data[]":particularData, csrfmiddlewaretoken: csr };
+           $.ajax({
+               url: "{% url 'ebilling:draftPurchase' %}",
+               method: "POST",
+               data: mydata,
+               success: function (data) {
+                  //  x = data.units;
+                   if (data.status == 201) {
+                       alertify.set('notifier', 'position', 'top-right');
+                       alertify.success("{% trans "New Purchase Bill Created" %}");
+                     
+                   }
+                  
+                  
+                  
+                   $("form")[0].reset();
+                  
+                   if (data.status == 400) {
+                       alertify.set('notifier', 'position', 'top-right');
+                       alertify.error("{% trans "Something went wrong" %}!");
+                       
+                       $("form")[0].reset();
+                   }
+               }
+
+           });
+       }
+
+
+
+
+   });
+
+
+
+
+
+
+
+   $("#amountPaid").on("input", function() {
+   if(!$(this).val()){
+      var t=$("tfoot .grandTotalAmount").text();
+      console.log(t);
+      $("#balance").val(t);
+     
+   }
+   else{
+      var b= $("#balance").val();
+   $("#balance").val(b-$(this).val());
+   }
+
+
+});
+
+
+   });
+
+
+
+
+   function disableRefNo() {
+      var d = document.getElementById("payMode").value;
+      console.log(d)
+      if (d === "Cash") {
+         console.log(d)
+         document.getElementById("transactionID").disabled = true;
+      }
+      else {
+         document.getElementById("transactionID").disabled = false;
+
+      }
+
+   }
+
+
+
+
+</script> 
+
+{% endblock content %}

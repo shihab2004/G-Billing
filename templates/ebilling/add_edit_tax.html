@@ -1,0 +1,108 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} {% trans "G-Billing" %} | {% trans "Manage Taxes" %} {% endblock title %}
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+         <!--breadcrumb-->
+         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">{% translate "Home" %}</div>
+            <div class="ps-3">
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb mb-0 p-0">
+                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                     </li>
+                     <li class="breadcrumb-item active" aria-current="page">{% translate "Manage Taxes" %}</li>
+                  </ol>
+               </nav>
+            </div>
+
+         </div>
+         <!--end breadcrumb-->
+         <form action="." method="post">
+            {% csrf_token %}
+            <div class="card border-top border-0 border-4 border-white">
+               <div class="card-body">
+                  <div class="border p-4 rounded">
+                     <div class="card-title d-flex align-items-center">
+                        <div><i class="bx bxs-user me-1 font-22 text-white"></i>
+                        </div>
+                        <h5 class="mb-0 text-white">{% translate "Add/Update Taxes" %}</h5>
+                     </div>
+                     <hr>
+                     <div class="row mb-3">
+                        <label for="inputEnterYourName" class="col-sm-3 col-form-label">{% translate "Name" %}</label>
+                        <div class="col-sm-9">
+                           <input type="text" class="form-control" name="tname" id="tname"
+                              placeholder="{% translate "Tax Name eg: VAT" %}">
+                        </div>
+                     </div>
+                     <div class="row mb-3">
+                        <label for="inputPhoneNo2" class="col-sm-3 col-form-label">{% translate "Rate" %}</label>
+                        <div class="col-sm-9">
+                           <input type="text" class="form-control" name="rate" id="rate" placeholder="{% translate "Rate" %}..">
+                        </div>
+                     </div>
+                     <div class="row mb-3">
+                        <label for="inputEmailAddress2" class="col-sm-3 col-form-label">{% translate "Tax Type" %}</label>
+                        <div class="col-sm-9">
+                           <select id="inputState" name="type" class="form-select">
+                              <option selected="">{% translate "Choose" %}...</option>
+                              {% for t in tax_type %}
+                              <option value="{{t.id}}">{{t.name}}</option>
+                              {% endfor %}
+                           </select>
+                        </div>
+                     </div>
+
+
+                     <div class="row mb-3">
+                        <label for="inputAddress4" class="col-sm-3 col-form-label">{% translate "Enabled" %}</label>
+                        <div class="col-sm-9">
+                           <div class="form-check">
+                              <input class="form-check-input" name="is_enabled" type="checkbox" id="gridCheck4">
+
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <label class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                           <button type="submit" class="btn btn-light px-5">{% translate "Add" %}</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+
+{% endblock content %}

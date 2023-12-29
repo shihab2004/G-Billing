@@ -1,0 +1,197 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} {% translate "G-Billing" %} | {% translate "Add New Client" %} {% endblock title %}
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+		<!--breadcrumb-->
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+         <div class="breadcrumb-title pe-3">{% translate "Home" %}</div>
+         <div class="ps-3">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb mb-0 p-0">
+                  <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">{% translate "Add New Client" %}</li>
+               </ol>
+            </nav>
+         </div>
+ 
+      </div>
+      <!--end breadcrumb-->
+
+   
+      <div class="card border-top border-0 border-4 border-white">
+        <div class="card-body p-5">
+            <div class="card-title d-flex align-items-center">
+                <div><i class="bx bxs-user me-1 font-22 text-white"></i>
+                </div>
+                <h5 class="mb-0 text-white">{% translate "Client Registration" %}</h5>
+            </div>
+            <hr>
+            <form class="row g-3" method="post" action="." enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="col-md-6">
+                    <label for="inputFirstName" class="form-label">{% translate "Full Name" %}</label>
+                    <input type="text" class="form-control" name="fullname" required placeholder="{% translate "Enter name" %}..." id="inputFirstName">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail" class="form-label">{% translate "Email" %}</label>
+                    <input type="email"  name="email"  placeholder="{% translate "Enter email" %}..." class="form-control" id="inputEmail">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputLastName" class="form-label">{% translate "PAN Number" %}</label>
+                    <input type="number" name="pan_no"  placeholder="{% translate "Enter PAN no" %}..." class="form-control" id="inputLastName">
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="inputPassword" class="form-label">{% translate "VAT No" %}.</label>
+                    <input type="number" name="vat_no" placeholder="{% translate "Enter VAT no" %}..." class="form-control" id="inputPassword">
+                </div>
+
+                        
+                <div class="col-md-6">
+                    <label for="inputPassword" class="form-label">{% translate "Mobile No." %}</label>
+                    <input type="number" name="mobile"  required placeholder="{% translate "Enter mobile no" %}..." class="form-control" id="inputPassword">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword" class="form-label">{% translate "Phone No" %}.</label>
+                    <input type="number" name="phone"  placeholder="{% translate "Enter phone no" %}..." class="form-control" id="inputPassword">
+                </div>
+
+
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">{% translate "Account Type" %}</label>
+                    <select id="inputState" name="account_type" class="form-select">
+                        <option value="Credit">{% translate "Credit(Cr.)" %}</option>
+                        <option value="Debit">{% translate "Debit(Dr.)" %}</option>
+
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">{% translate "Identity Document Type" %}</label>
+                    <select id="inputState" name="identity_doc" class="form-select">
+                        <option value="None">{% translate "N/A" %}</option>
+                        <option value="Citizenship">{% translate "Citizenship Card" %}</option>
+                        <option value="Driving License">{% translate "Driving License" %}</option>
+                        <option value="Pan Card">{% translate "PAN Card" %}</option>
+                        <option value="Passport">{% translate "Passport" %}</option>
+                        <option value="Voter ID">{% translate "Voter ID" %}</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="inputZip" class="form-label">{% translate "Document No" %}</label>
+                    <input type="text" class="form-control" name="document_no" placeholder="{% translate "Enter doument no" %}..." id="inputZip">
+                </div>
+         
+
+
+
+                <div class="col-md-4">
+                    <label for="inputZip" class="form-label">{% translate "Opening Balance" %}</label>
+                    <input type="number" class="form-control" name="opening_balance" value="0" placeholder="{% translate "Rs" %}.." id="inputZip">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">{% translate "Credit Allowed" %}</label>
+                    <select id="inputState" name="credit_allowed" class="form-select">
+                        <option value="False">{% translate "No" %}</option>
+                        <option value="True">{% translate "Yes" %}</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="inputZip" class="form-label">{% translate "Credit Limit" %}</label>
+                    <input type="number" name="credit_limit" value="0" placeholder="{% translate "Rs" %}.."  class="form-control" id="inputZip">
+                </div>
+
+
+
+
+
+
+
+                <div class="col-md-3">
+                    <label for="inputFirstName" class="form-label">{% translate "City" %}</label>
+                    <input type="text" class="form-control" name="city" required placeholder="{% translate "Enter city" %}..." id="inputFirstName">
+                </div>
+
+                <div class="col-md-2">
+                    <label for="inputFirstName" class="form-label">{% translate "District" %}</label>
+                    <input type="text" class="form-control" name="district" required placeholder="{% translate "Enter district" %}..." id="inputFirstName">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="inputFirstName" class="form-label">{% translate "Province" %}</label>
+                    <input type="text" class="form-control" name="province" required placeholder="{% translate "Enter province" %}..." id="inputFirstName">
+                </div>
+                
+                <div class="col-md-2">
+                    <label for="inputFirstName" class="form-label">{% translate "Zip Code" %}</label>
+                    <input type="number" class="form-control"name="pincode"  placeholder="{% translate "Enter pincode" %}..." id="inputFirstName">
+                </div>
+                <div class="col-md-2">
+                    <label for="inputFirstName" class="form-label">{% translate "Country" %}</label>
+                    <input type="text" disabled class="form-control" value="{% translate "Nepal" %}"  id="inputFirstName">
+                </div>
+
+                <div class="col-6">
+                    <label for="inputAddress" class="form-label">{% translate "Billing Address" %}</label>
+                    <textarea class="form-control" id="inputAddress" name="billing_address" required placeholder="{% translate "Billing Address" %}..." rows="3"></textarea>
+                </div>
+
+
+                <div class="col-6">
+                    <label for="inputAddress2" class="form-label">{% translate "Remark/Note" %}</label>
+                    <textarea class="form-control" id="inputAddress2" name="remark"    placeholder="{% translate "Billing address" %} ...." rows="3"></textarea>
+                </div>
+
+
+
+
+                <div class="mb-3">
+                    <label class="form-label">{% translate "Upload Client Profile Pic (150px X 150px)" %}</label>
+                    <input type="file" name="profile_pic"  class="form-control">
+                </div>
+
+
+
+         
+                <div class="col-12">
+                    <button type="submit" class="btn btn-light px-5">{% translate "Save" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+Company Model :
+    Name *:
+    Reg No :
+    PAN/VAT No * : 
+    Reg Date :
+    Ph no  :
+    Email : 
+    website : 
+    Logo : 
+    Address * : 
+
+
+Item Model :
+    Name :
+    
+
+
+

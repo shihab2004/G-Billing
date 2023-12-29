@@ -1,0 +1,188 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} {% trans "G-Billing" %} | {% trans "Search & Manage Product/Service" %} {% endblock title %}
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+         <!--breadcrumb-->
+         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">{% trans "Home" %}</div>
+            <div class="ps-3">
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb mb-0 p-0">
+                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                     </li>
+                     <li class="breadcrumb-item active" aria-current="page">{% trans "Search & Manage Product/Service" %}</li>
+                  </ol>
+               </nav>
+            </div>
+            <div class="ms-auto">
+
+
+          
+
+
+
+               <div class="btn-group"> <a href="{% url 'ebilling:addProduct' %}" class="btn btn-light mb-3 mb-lg-0" ><i class="bx bxs-plus-square"></i> {% trans "New Product" %}</a>
+                  <a href="{% url 'ebilling:addService' %}" class="btn btn-light mb-3 mb-lg-0" > <i class="bx bxs-plus-square"></i>{% trans "New Service" %}</a>
+               </div>
+            </div>
+         </div>
+         <!--end breadcrumb-->
+
+
+         <h6 class="mb-0 text-uppercase">{% trans "Product & Service List" %}</h6>
+         <hr />
+      
+
+         <div class="card">
+            <div class="card-body">
+               <form action="." method="post">
+                  {% csrf_token %}
+               <div class="d-lg-flex align-items-center mb-4 gap-3">
+                  <div class="position-relative">
+                     <input type="text" class="form-control ps-5 radius-30" placeholder="{% trans "Search Product/Service" %}"> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
+                  </div>
+                 <div class="ms-auto"><a href="javascript:;" class="btn btn-light radius-30 mt-2 mt-lg-0"><i class="bx bxs-search"></i>{% trans "Search Item" %}</a></div>
+               </div>
+            </form>
+               <div class="table-responsive">
+                  <table class="table mb-0">
+                     <thead class="table-light">
+                        <tr>
+                           <th>{% trans "S.No." %}</th>
+                           <th>{% trans "Type" %}</th>
+                           <th>{% trans "Group" %}</th>
+                           <th>{% trans "Brand" %}</th>
+                           <th>{% trans "Item Name" %}</th>
+                           <th>{% trans "Print Name" %}</th>
+                           <th>{% trans "UoM" %}</th>
+                           <th>{% trans "Purchase Price" %}</th>
+                           <th>{% trans "Sale Price" %}</th>
+                           <th>{% trans "Min. Sale Price" %}</th>
+                           <th>{% trans "M.R.P" %}</th>
+                           <th>{% trans "HSN" %}</th>
+                           <th>{% trans "VAT" %}</th>
+                           <th>{% trans "Sale Discount(%)" %}</th>
+                           <th>{% trans "Actions" %}</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        {% for data in mydata %}
+                        <tr>
+                           <td>
+                              <div class="d-flex align-items-center">
+                                 <!-- <div>
+                                    <input class="form-check-input me-3" type="checkbox" value="" aria-label="...">
+                                 </div> -->
+                                 <div class="ms-2">
+                                    <h6 class="mb-0 font-14">#{{data.0}}</h6>
+                                 </div>
+                              </div>
+                           </td>
+                           {% if data.1 == "Product" %}
+                           <td style="color: yellowgreen; font-weight: bold;">{{data.1}}</td>
+                           {% else %}
+                           <td style="color: skyblue; font-weight: bold;">{{data.1}}</td>
+                           {% endif %}
+                           <td>{{data.2}}</td>
+                           {% if data.3 == "None" %}
+                           <td></td>
+                           {% else %}
+                           <td> {{data.3}}</td>
+                           {% endif %}
+                         
+                           <td style="font-weight: bold;">{{data.4}}</td>
+                           <td>{{data.5}}</td>
+                           <td>{{data.6}}</td>
+                           {% if data.7 == "None" %}
+                           <td></td>
+                           {% else %}
+                           <td>रु {{data.7}}</td>
+                           {% endif %}
+
+                           {% if data.8 == "None" %}
+                           <td></td>
+                           {% else %}
+                           <td style="font-weight: bold;">रु {{data.8}}</td>
+                           {% endif %}
+
+                           {% if data.9 == "Null" %}
+                           <td></td>
+                           {% else %}
+                           <td>रु {{data.9}}</td>
+                           {% endif %}
+
+                           {% if data.10 == "Null" %}
+                           <td></td>
+                           {% else %}
+                           <td>रु {{data.10}}</td>
+                           {% endif %}
+                       
+                           <td>{{data.11}}</td>
+
+                           <td>{{data.12}} %</td>
+
+                           {% if data.13 is None %}
+                           <td></td>
+                           {% else %}
+                           <td>{{data.13}} %</td>
+                           {% endif %}
+                          
+                           <td>
+                              <div class="d-flex order-actions">
+
+                                 {% if data.1 == "Service" %}
+                                 <a href="{% url 'ebilling:editService' data.14 %}" class=""><i class="bx bxs-edit"></i></a>
+                                 <a href="{% url 'ebilling:deleteService' data.14 %}" class="ms-3"><i class="bx bxs-trash"></i></a>
+                                 {% else %}
+                                 <a href="{% url 'ebilling:editProduct' data.14 %}" class=""><i class="bx bxs-edit"></i></a>
+                                 <a href="{% url 'ebilling:deleteProduct' data.14 %}" class="ms-3"><i class="bx bxs-trash"></i></a>
+                                 {% endif %}
+
+
+
+                             
+                              </div>
+                           </td>
+                        </tr>
+                      
+                      {% endfor %}
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+
+{% endblock content %}

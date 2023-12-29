@@ -1,0 +1,259 @@
+{% load i18n %}
+{% load trans_utils %}
+
+<!--sidebar wrapper -->
+<div class="sidebar-wrapper" data-simplebar="true">
+   <div class="sidebar-header">
+      <div>
+         <img src="/static/ebilling/img/logo-removebg-preview.png" class="logo-icon" alt="logo icon">
+      </div>
+      <div>
+         <h4 class="logo-text">{% trans "G-Billing Soft" %}</h4>
+      </div>
+      <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+      </div>
+   </div>
+   <!--navigation-->
+   <ul class="metismenu" id="menu">
+
+      {% if  request|check_perms:"Allow Dashboard"  %}
+      <li>
+         <a href="{% url 'ebilling:dashboard' %}">
+            <div class="parent-icon"><i class='bx bx-home-circle'></i>
+            </div>
+            <div class="menu-title">{% trans "Dashboard" %}</div>
+         </a>
+      </li>
+      
+      {% endif %}
+
+      <li class="menu-label">{% trans "Bills" %}</li>
+      {% if  request.user.is_staff %}
+      <li>
+         <a href="javascript:;" class="has-arrow">
+            <div class="parent-icon"><i class='bx bx-cart-alt'></i>
+            </div>
+            <div class="menu-title">{% trans "Sales" %}</div>
+         </a>
+         <ul>
+            <li> <a href="ecommerce-products.html"><i class="bx bx-right-arrow-alt"></i>{% trans "Products" %}</a>
+            </li>
+            <li> <a href="ecommerce-products-details.html"><i class="bx bx-right-arrow-alt"></i>{% trans "Product Details" %}</a>
+            </li>
+            <li> <a href="ecommerce-add-new-products.html"><i class="bx bx-right-arrow-alt"></i>{% trans "Add New Products" %}</a>
+            </li>
+            <li> <a href="ecommerce-orders.html"><i class="bx bx-right-arrow-alt"></i>{% trans "Orders" %}</a>
+            </li>
+         </ul>
+      </li>
+      {% endif %}
+
+      {% comment %} {%    as f %} {% endcomment %}
+      {% if  request|check_perms:"Allow Purchase"  %}
+      <li>
+         <a href="javascript:;" class="has-arrow">
+            <div class="parent-icon"><i class='bx bx-cart'></i>
+            </div>
+            <div class="menu-title">{% trans "Purchase" %}</div>
+         </a>
+         <ul>
+            <li> <a href="{% url 'ebilling:draftPurchase' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Add Purchase" %}</a>
+            </li>
+            <li> <a href="ecommerce-products-details.html"><i class="bx bx-right-arrow-alt"></i>{% trans "Search & Manage Purchase" %}</a>
+            </li>
+            <li> <a href="{% url 'ebilling:addSupplier' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Add Supplier" %}</a>
+            </li>
+            <li> <a href="{% url 'ebilling:suppliers' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Search & Manage Suppliers" %}</a>
+            </li>
+         </ul>
+      </li>
+      {% endif %}
+
+
+
+
+      <li class="menu-label">{% trans "Miscellaneous" %}</li>
+
+
+      {% if  request.user.is_staff %}
+
+      <li>
+         <a href="javascript:;">
+            <div class="parent-icon"><i class='lni lni-money-protection'></i>
+            </div>
+            <div class="menu-title">{% trans "Banking" %}</div>
+         </a>
+      </li>
+   
+
+
+      <li>
+         <a class="has-arrow" href="javascript:;">
+            <div class="parent-icon"><i class="fadeIn animated bx bx-group"></i>
+            </div>
+            <div class="menu-title">{% trans "Client" %}</div>
+         </a>
+         <ul>
+
+            <li> <a href="{% url 'ebilling:addClient' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Add Client" %}</a>
+            </li>
+            <li> <a href="{% url 'ebilling:clients' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Search & Manage Clients" %}</a>
+            </li>
+
+         </ul>
+      </li>
+      {% endif %}
+
+      {% if  request|check_perms:"Allow Expense"  %}
+      <li>
+         <a class="has-arrow" href="javascript:;">
+            <div class="parent-icon"> <i class="lni lni-investment"></i>
+            </div>
+               <div class="menu-title">{% trans "Expense" %}</div>
+         </a>
+         <ul>
+            <li> <a href="{% url 'ebilling:addExpense' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Add Expense" %}</a>
+            </li>
+            <li> <a href="{% url 'ebilling:expenses' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Search & Manage Expenses" %}</a>
+            </li>
+
+         </ul>
+      </li>
+      {% endif %}
+      {% if  request.user.is_staff %}
+      <li>
+         <a class="has-arrow" href="javascript:;">
+            <div class="parent-icon"><i class="lni lni-control-panel"></i>
+            </div>
+            <div class="menu-title">{% trans "Masters" %}</div>
+         </a>
+         <ul>
+
+            <li> <a href="{% url 'ebilling:addService' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Add Service" %}</a></li>
+            <li> <a href="{% url 'ebilling:searchManageProductService' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Search & Manage Items" %}</a></li>
+
+            <li> <a href="{% url 'ebilling:addBrand' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Brand Master" %}</a></li>
+            <li> <a href="{% url 'ebilling:addGroup' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Group Master" %}</a></li>
+            <li> <a href="{% url 'ebilling:addBank' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Bank Master" %}</a></li>
+
+            <li> <a class="has-arrow" ><i class="bx bx-right-arrow-alt"></i>{% trans "Miscellaneous" %}</a>
+               <ul>
+                  <li> <a href="{% url 'ebilling:addUnit' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Unit Master" %}</a></li>
+                  <li> <a href="{% url 'ebilling:addExpenseType' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Expense Master" %}</a></li>
+                  <li> <a href="{% url 'ebilling:addDepartment' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Department Master" %}</a></li>
+                  <li> <a href="{% url 'ebilling:addDesignation' %}"><i class="bx bx-right-arrow-alt"></i>{% trans "Designation Master" %}</a></li>
+               </ul>
+            </li>
+
+
+         </ul>
+      </li>
+      {% endif %}
+
+
+      {% if  request|check_perms:"Allow Reports"  %}
+      <li>
+         <a class="has-arrow" href="javascript:;">
+            <div class="parent-icon"><i class="lni lni-bar-chart"></i>
+            </div>
+            <div class="menu-title">{% trans "Reports" %}</div>
+         </a>
+         <ul>
+            <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "Clients" %}</a>
+               <ul>
+                  <li> <a href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "Amount Due" %}</a></li>
+                  <li> <a href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "Payment History" %}</a></li>
+               </ul>
+            </li>
+
+            <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "Suppliers" %}</a>
+               <ul>
+
+                  <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "AccountBalance" %}</a></li>
+                  <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "Payment History" %}</a></li>
+               </ul>
+            </li>
+
+            <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "Expenses" %}</a>
+               <ul>
+                  <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "Search Expenses" %}</a></li>
+               </ul>
+            </li>
+
+            <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "Sales" %}</a>
+               <ul>
+                  <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "Level Two" %}</a>
+
+                  </li>
+               </ul>
+            </li>
+            <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "Purchase" %}</a>
+               <ul>
+                  <li> <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{% trans "Level Two" %}</a>
+
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+      {% endif %}
+
+
+
+    {% if  request.user.is_staff %}
+      <li>
+         <a href="{% url 'ebilling:user' %}">
+            <div class="parent-icon"><i class="lni lni-user"></i>
+            </div>
+            <div class="menu-title">{% trans "User" %}</div>
+         </a>
+      </li>
+
+
+      <li>
+         <a href="{% url 'ebilling:updatecompany' %}">
+            <div class="parent-icon"><i class="lni lni-apartment"></i>
+            </div>
+            <div class="menu-title">{% trans "Company" %}</div>
+         </a>
+      </li>
+
+      <li>
+         <a href="{% url 'ebilling:settings' %}">
+            <div class="parent-icon"> <i class="lni lni-cogs"></i>
+            </div>
+            <div class="menu-title">{% trans "Settings" %}</div>
+         </a>
+      </li>
+
+
+      <li>
+         <a href="{% url 'ebilling:history' %}">
+            <div class="parent-icon"><i class="bx bx-history"></i>
+            </div>
+            <div class="menu-title">{% trans "History" %}</div>
+         </a>
+      </li>
+
+
+      <li>
+         <a href="{% url 'ebilling:backup_restore' %}">
+            <div class="parent-icon"><i class="bx bx-recycle"></i>
+            </div>
+            <div class="menu-title">{% trans "Back Up & Restore" %}</div>
+         </a>
+      </li>
+      
+
+      <li>
+         <a href="#" target="_blank">
+            <div class="parent-icon"><i class="bx bx-support"></i>
+            </div>
+            <div class="menu-title">{% trans "Support" %}</div>
+         </a>
+      </li>
+
+      {% endif %}
+   </ul>
+   <!--end navigation-->
+</div>

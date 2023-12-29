@@ -1,0 +1,194 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} {% trans "G-Billing" %} | {% trans "Add New Supplier" %} {% endblock title %}
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+		<!--breadcrumb-->
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+         <div class="breadcrumb-title pe-3">{% trans "Home" %}</div>
+         <div class="ps-3">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb mb-0 p-0">
+                  <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">{% trans "Add New Supplier" %}</li>
+               </ol>
+            </nav>
+         </div>
+ 
+      </div>
+      <!--end breadcrumb-->
+
+   
+      <div class="card border-top border-0 border-4 border-white">
+        <div class="card-body p-5">
+            <div class="card-title d-flex align-items-center">
+                <div><i class="bx bxs-user me-1 font-22 text-white"></i>
+                </div>
+                <h5 class="mb-0 text-white">{% trans "Supplier Registration" %}</h5>
+            </div>
+            <hr>
+            <form class="row g-3" method="post" action="." enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="col-md-6">
+                    <label for="inputFirstName" class="form-label">{% trans "Supplier Name" %}</label>
+                    <input type="text" class="form-control" name="fullname" required placeholder="{% trans "Enter name" %}..." id="inputFirstName">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail" class="form-label">{% trans "Email" %}</label>
+                    <input type="email"  name="email"  placeholder="{% trans "Enter email" %}..." class="form-control" id="inputEmail">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputLastName" class="form-label">{% trans "PAN Number" %}</label>
+                    <input type="number" name="pan_no"  placeholder="{% trans "Enter PAN no" %}..." class="form-control" id="inputLastName">
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="inputPassword" class="form-label">{% trans "VAT No" %}.</label>
+                    <input type="number" name="vat_no" placeholder="{% trans "Enter VAT no" %}..." class="form-control" id="inputPassword">
+                </div>
+
+                        
+                <div class="col-md-4">
+                    <label for="inputPassword" class="form-label">{% trans "Mobile No" %}.</label>
+                    <input type="number" name="mobile"  required placeholder="{% trans "Enter mobile no" %}..." class="form-control" id="inputPassword">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputPassword" class="form-label">{% trans "Phone No" %}.</label>
+                    <input type="number" name="phone"  placeholder="{% trans "Enter phone no" %}..." class="form-control" id="inputPassword">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="inputPassword" class="form-label">{% trans "Contact Person" %}</label>
+                    <input type="text" name="contact_person"  placeholder="{% trans "Enter contact person" %}..." class="form-control" id="inputPassword">
+                </div>
+
+
+                <div class="col-md-3">
+                    <label for="inputState" class="form-label">{% trans "Account Type" %}</label>
+                    <select id="inputState" name="account_type" class="form-select">
+                        <option value="Credit">{% trans "Credit(Cr.)" %}</option>
+                        <option value="Debit">{% trans "Debit(Dr.)" %}</option>
+
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">{% trans "Bank Name" %}</label>
+                    <select id="inputState" name="bank_name"  class="form-select">
+                        <option value="None">N/A</option>
+                        <option value="NBL">{% trans "Nepal Bank Ltd. (NBL)" %}</option>
+                        <option value="RRB">{% trans "Rastriya Banijya Bank Ltd. (RBB)" %}</option>
+                        <option value="NABIL">{% trans "Nabil Bank Ltd. (NABIL)" %}</option>
+                        <option value="NIBL">{% trans "Nepal Investment Bank Ltd. (NIBL)" %}</option>
+                        <option value="HBL">{% trans "Himalayan Bank Ltd. (HBL)" %}</option>
+                        <option value="NSBI">{% trans "Nepal SBI Bank Ltd. (NSBI)" %}</option>
+                        <option value="EBL">{% trans "Everest Bank Ltd. (EBL)" %}</option>
+                        <option value="NIC">{% trans "NIC ASIA Bank Ltd. (NIC)" %}</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="inputZip" class="form-label">{% trans "IFSC Code" %}</label>
+                    <input type="text" name="ifsc_code" placeholder="{% trans "Enter bank ifsc code" %}..." class="form-control" id="inputZip">
+                </div>
+
+
+           
+         
+
+                <div class="col-md-6">
+                    <label for="inputZip" class="form-label">{% trans "Bank A/C No" %}.</label>
+                    <input type="number" class="form-control" name="bank_account_no"  placeholder="{% trans "Enter bacnk a/c no" %}..." id="inputZip">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputZip" class="form-label">{% trans "Opening Balance" %}</label>
+                    <input type="number" class="form-control" name="opening_balance" value="0" placeholder="{% trans "Rs" %}.." id="inputZip">
+                </div>
+         
+              
+
+
+
+
+
+
+
+                <div class="col-md-3">
+                    <label for="inputFirstName" class="form-label">{% trans "City" %}</label>
+                    <input type="text" class="form-control" name="city" required placeholder="{% trans "Enter city" %}..." id="inputFirstName">
+                </div>
+
+                <div class="col-md-2">
+                    <label for="inputFirstName" class="form-label">{% trans "District" %}</label>
+                    <input type="text" class="form-control" name="district" required placeholder="{% trans "Enter district" %}..." id="inputFirstName">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="inputFirstName" class="form-label">{% trans "Province" %}</label>
+                    <input type="text" class="form-control" name="province" required placeholder="{% trans "Enter province" %}..." id="inputFirstName">
+                </div>
+                
+                <div class="col-md-2">
+                    <label for="inputFirstName" class="form-label">{% trans "Zip Code" %}</label>
+                    <input type="number" class="form-control"name="pincode"  placeholder="{% trans "Enter pincode" %}..." id="inputFirstName">
+                </div>
+                <div class="col-md-2">
+                    <label for="inputFirstName" class="form-label">{% trans "Country" %}</label>
+                    <input type="text" disabled class="form-control" value="{% trans "Nepal" %}"  id="inputFirstName">
+                </div>
+
+                <div class="col-6">
+                    <label for="inputAddress" class="form-label">{% trans "Billing Address" %}</label>
+                    <textarea class="form-control" id="inputAddress" name="billing_address" required placeholder="{% trans "Billing Address" %}..." rows="3"></textarea>
+                </div>
+
+
+                <div class="col-6">
+                    <label for="inputAddress2" class="form-label">{% trans "Remark/Note" %}</label>
+                    <textarea class="form-control" id="inputAddress2" name="remark"    placeholder="{% trans "Billing address" %} ...." rows="3"></textarea>
+                </div>
+
+
+         
+                <div class="col-12">
+                    <button type="submit" class="btn btn-light px-5">{% trans "Save" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+
+{% endblock content %}

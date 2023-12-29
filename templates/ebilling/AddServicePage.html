@@ -1,0 +1,288 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %}
+{% if service %}
+{% trans "E-Billing" %} | {% trans "Edit Service" %}
+{% else %}
+{% trans "E-Billing" %} | {% trans "Add New Service" %}
+{% endif %}
+{% endblock title %}
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+		<!--breadcrumb-->
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+         <div class="breadcrumb-title pe-3">{% trans "Home" %}</div>
+         <div class="ps-3">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb mb-0 p-0">
+                  <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">{% trans "Service Manangement" %}</li>
+               </ol>
+            </nav>
+         </div>
+ 
+      </div>
+      <!--end breadcrumb-->
+
+      {% if service %}
+
+      <div class="card">
+         <div class="card-body p-4">
+            <h5 class="card-title">{% trans "Update Service Details" %}</h5>
+            <hr>
+            <form  method="post" action="{% url 'ebilling:editService' service.id %}"  enctype="multipart/form-data">
+               {% csrf_token %}
+                  <div class="form-body mt-4">
+              <div class="row">
+                <div class="col-lg-8">
+                      <div class="border border-3 p-4 rounded">
+                <div class="mb-3">
+                   <label for="inputServiceTitle" class="form-label">{% trans "Service Title" %}*</label>
+                   <input type="text" required class="form-control" value="{{service.name}}" name="name" id="inputServiceTitle" placeholder="{% trans "Enter Service title" %}">
+                  </div>
+                  <div class="mb-3">
+                     <label for="inputServiceTitle" class="form-label">{% trans "Print Service Title" %}</label>
+                     <input type="text" required class="form-control" value="{{service.print_name}}" name="print_name" id="inputServiceTitle" placeholder="{% trans "Enter print Service title" %}">
+                    </div>
+
+
+                    <div class="mb-3">
+                     <div class="row g-3">
+                        <div class="col-md-4">
+                           <label for="inputServiceTags" class="form-label">{% trans "VAT" %}*</label>
+                           <input type="text" class="form-control" name="vat" value="{{service.vat}}" id="vatField" required >
+                          </div>
+                     <div class="col-md-4">
+                        <label for="inputServiceTags" class="form-label">{% trans "HSN/SAC Code" %}</label>
+                        <input type="text" class="form-control" name="hsn_sac_code" id="hsnField" value="{{service.hsn_or_sac_code}}"  placeholder="XXXX-XX-XXXX">
+                       </div>
+
+
+                       
+                     <div class="col-md-4">
+                        <label for="inputServiceTags" class="form-label">{% trans "Item Code" %}</label>
+                        <input type="text" name="item_code" class="form-control"  value="{{service.item_code}}" id="inputServiceTags" placeholder="{% trans "Enter Item Code" %}">
+                       </div>
+                   
+                    </div>
+                  </div>
+
+
+
+                  <div class="mb-3">
+                   <label for="inputServiceDescription" class="form-label">{% trans "Service Description" %}</label>
+                   <textarea class="form-control" name="description" value="{{service.decription}}"  id="inputServiceDescription" rows="3">{{service.decription}} </textarea>
+                  </div>
+
+          
+
+
+
+
+
+
+               
+
+
+                       </div>
+                </div>
+                <div class="col-lg-4">
+                <div class="border border-3 p-4 rounded">
+                         <div class="row g-3">
+                  
+                     <div class="col-12">
+                      <label for="inputServiceType" class="form-label">{% trans "Group" %}*</label>
+                      <select class="form-select" required name="group" id="group" >
+                         <option></option>
+                         {% for g in groups %}
+                         <option value="{{g.id}}" {% if service.group.id == g.id %} selected {% endif %} data-vat="{{g.vat}}" data-hsn="{{g.hsn_or_sac_code}}" >{{g.name}}</option>
+                         {% endfor %}
+                        </select>
+                     </div>
+                    
+
+
+                     <div class="col-12">
+                        <label for="inputServiceTags" class="form-label">{% trans "Service Charge" %}*</label>
+                        <input type="text" class="form-control"  value="{{service.service_charge}}" name="service_charge" required  id="inputServiceTags" >
+                       </div>
+
+
+
+                       <div class="col-12">
+                        <label for="inputServiceTags" class="form-label">{% trans "Min. Service Charge" %}*</label>
+                        <input type="text" class="form-control" value="{{service.min_service_charge}}"  name="min_service_charge" id="inputServiceTags" >
+                       </div>
+
+
+                       <div class="col-12">
+                        <label for="inputServiceTags" class="form-label">{% trans "Sale Discount" %}</label>
+                        <input type="number" class="form-control" value="{{service.discount}}"  name="sale_discount"  id="inputServiceTags" placeholder="%">
+                       </div>
+
+                
+
+                     <div class="col-12">
+                        <label for="inputServiceTags" class="form-label">{% trans "Print Description(Invoice)" %}</label>
+                        <input class="form-check-input" {% if service.is_print_description == True %} checked {% endif %} type="checkbox" name="isPrintDescription" id="isPrintDescription" >
+                       </div>
+
+
+
+
+                   
+                     <div class="col-12">
+                        <div class="d-grid">
+                                    <button type="submit" class="btn btn-light">{% trans "Update Service" %}</button>
+                        </div>
+                     </div>
+                  </div> 
+               </div>
+               </div>
+             </div><!--end row-->
+            </form>
+          </div>
+         </div>
+
+      {% else %}
+
+      <div class="card">
+         <div class="card-body p-4">
+            <h5 class="card-title">{% trans "Add New Service" %}</h5>
+            <hr>
+            <form  method="post" action="." enctype="multipart/form-data">
+               {% csrf_token %}
+                  <div class="form-body mt-4">
+              <div class="row">
+                <div class="col-lg-8">
+                      <div class="border border-3 p-4 rounded">
+                <div class="mb-3">
+                   <label for="inputServiceTitle" class="form-label">{% trans "Service Title" %}*</label>
+                   <input type="text" required class="form-control" name="name" id="inputServiceTitle" placeholder="{% trans "Enter Service title" %}">
+                  </div>
+                  <div class="mb-3">
+                     <label for="inputServiceTitle" class="form-label">{% trans "Print Service Title" %}</label>
+                     <input type="text" required class="form-control" name="print_name" id="inputServiceTitle" placeholder="{% trans "Enter print Service title" %}">
+                    </div>
+
+                    <div class="mb-3">
+                     <div class="row g-3">
+                        <div class="col-md-4">
+                           <label for="inputServiceTags" class="form-label">{% trans "VAT" %}*</label>
+                           <input type="text" class="form-control" placeholder="%" name="vat" id="vatField" required >
+                          </div>
+                     <div class="col-md-4">
+                        <label for="inputServiceTags" class="form-label">{% trans "HSN/SAC Code" %}</label>
+                        <input type="text" class="form-control"name="hsn_sac_code" id="hsnField"   placeholder="XXXX-XX-XXXX">
+                       </div>
+
+
+                       
+                     <div class="col-md-4">
+                        <label for="inputServiceTags" class="form-label">{% trans "Item Code" %}</label>
+                        <input type="text" name="item_code" class="form-control" id="inputServiceTags" placeholder="{% trans "Enter Item Code" %}">
+                       </div>
+                   
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3">
+                   <label for="inputServiceDescription" class="form-label">{% trans "Service Description" %}</label>
+                   <textarea class="form-control" name="description"  id="inputServiceDescription" rows="3"></textarea>
+                  </div>
+
+                       </div>
+                </div>
+                <div class="col-lg-4">
+                <div class="border border-3 p-4 rounded">
+                         <div class="row g-3">
+                
+                     <div class="col-12">
+                      <label for="inputServiceType" class="form-label">{% trans "Group" %}*</label>
+                      <select class="form-select" required name="group" id="group" >
+                         <option></option>
+                         {% for g in groups %}
+                         <option value="{{g.id}}" data-vat="{{g.vat}}" data-hsn="{{g.hsn_or_sac_code}}" >{{g.name}}</option>
+                         {% endfor %}
+                        </select>
+                     </div>
+
+
+                     <div class="col-12">
+                        <label for="inputServiceTags" class="form-label">{% trans "Service Charge" %}*</label>
+                        <input type="text" class="form-control" name="service_charge" required  id="inputServiceTags" >
+                       </div>
+
+
+
+                       <div class="col-12">
+                        <label for="inputServiceTags" class="form-label">{% trans "Min. Service Charge" %}*</label>
+                        <input type="text" class="form-control"  name="min_service_charge" id="inputServiceTags" >
+                       </div>
+
+
+                       <div class="col-12">
+                        <label for="inputServiceTags" class="form-label">{% trans "Sale Discount" %}</label>
+                        <input type="number" class="form-control"  name="sale_discount"  id="inputServiceTags" placeholder="%">
+                       </div>
+
+                
+
+                     <div class="col-12">
+                        <label for="inputServiceTags" class="form-label">{% trans "Print Description(Invoice)" %}</label>
+                        <input class="form-check-input" type="checkbox" name="isPrintDescription" id="isPrintDescription" >
+                       </div>
+
+
+                     <div class="col-12">
+                        <div class="d-grid">
+                                    <button type="submit" class="btn btn-light">{% trans "Save Service" %}</button>
+                        </div>
+                     </div>
+                  </div> 
+               </div>
+               </div>
+             </div><!--end row-->
+            </form>
+          </div>
+         </div>
+   
+{% endif %}
+
+
+
+   
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+
+{% endblock content %}

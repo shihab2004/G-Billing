@@ -1,0 +1,154 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} {% trans "G-Billing" %} | {% trans "Search & Manage Supppliers" %} {% endblock title %}
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+         <!--breadcrumb-->
+         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">{% trans "Home" %}</div>
+            <div class="ps-3">
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb mb-0 p-0">
+                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                     </li>
+                     <li class="breadcrumb-item active" aria-current="page">{% trans "Search & Manage Supppliers" %}</li>
+                  </ol>
+               </nav>
+            </div>
+            <div class="ms-auto">
+
+
+          
+
+
+
+               <div class="btn-group"> 
+                  <a href="{% url 'ebilling:addSupplier' %}" class="btn btn-light mb-3 mb-lg-0" > <i class="bx bxs-plus-square"></i>{% trans "New Suppplier" %}</a>
+               </div>
+            </div>
+         </div>
+         <!--end breadcrumb-->
+
+
+         <h6 class="mb-0 text-uppercase">{% trans "Supppliers List" %}</h6>
+         <hr />
+      
+
+         <div class="card">
+            <div class="card-body">
+               <form action="." method="post">
+                  {% csrf_token %}
+               <div class="d-lg-flex align-items-center mb-4 gap-3">
+                  <div class="position-relative">
+                     <input type="text" class="form-control ps-5 radius-30" placeholder="{% trans "Search by name/id/contact" %}"> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
+                  </div>
+                 <div class="ms-auto"><a href="javascript:;" class="btn btn-light radius-30 mt-2 mt-lg-0"><i class="bx bxs-search"></i>{% trans "Search Suppplier" %}</a></div>
+               </div>
+            </form>
+               <div class="table-responsive">
+                  <table class="table mb-0">
+                     <thead class="table-dark">
+                        <tr>
+                           <th>{% trans "Supplier ID" %}</th>
+                           <th>{% trans "Supplier Name" %}</th>
+                           <th>{% trans "Contact Person" %}</th>
+                           <th>{% trans "Contact No" %}</th>
+                           <th>{% trans "Address" %}</th>
+                           <th>{% trans "City" %}</th>
+                           <th>{% trans "District" %}</th>
+                           <th>{% trans "Province" %}</th>
+                           <th>{% trans "Pincode" %}</th>
+                           <th>{% trans "Country" %}</th>
+                           <th>{% trans "Email" %}</th>
+                           <th>{% trans "PAN No." %}</th>
+                           <th>{% trans "VAT" %}</th>
+                           <th>{% trans "Status" %}</th>
+                           <th>{% trans "Account Balance" %}</th>
+                           <th>{% trans "Actions" %}</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        {% for c in suppliers %}
+                        <tr>
+                           <td>
+                              <div class="d-flex align-items-center">
+                                 <!-- <div>
+                                    <input class="form-check-input me-3" type="checkbox" value="" aria-label="...">
+                                 </div> -->
+                                 <div class="ms-2">
+                                    <h6 class="mb-0 font-14">#{{c.id}}</h6>
+                                 </div>
+                              </div>
+                           </td>
+                           <td style="color: yellow;">{{c.company_name}}</td>
+                           <td>{{c.contact_person}}</td>
+                                        <td>{{c.contact_no}}</td>
+                                        <td>{{c.billing_address}}</td>
+                                        <td>{{c.city}}</td>
+                                        <td>{{c.district}}</td>
+                                        <td>{{c.province}}</td>
+                                        <td>{{c.pincode}}</td>
+                                        <td>{{c.country}}</td>
+                                        <td>{{c.email}}</td>
+                                        <td>{{c.pan_no}}</td>
+                                        <td>{{c.vat}}</td>
+                                        <td>
+                                            {% if c.is_active %}
+                                            <p style="color: green;">{% trans "Active" %} </p>
+                                            {% else %}
+                                            <p style="color: red;">{% trans "Inactive" %} </p>
+                                            {% endif %}
+                                        </td>
+                                        <td>{{c.opening_balance}}</td>
+                           <td>
+                              <div class="d-flex order-actions">
+
+                                
+                                 <a href="{% url 'ebilling:updateSupplier'  c.id%}" class=""><i class="bx bxs-edit"></i></a>
+                                 <a href="{% url 'ebilling:deleteSupplier' c.id %}" class="ms-3"><i class="bx bxs-trash"></i></a>
+                          
+                             
+                              </div>
+                           </td>
+                        </tr>
+                      
+                      {% endfor %}
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+
+{% endblock content %}

@@ -1,0 +1,151 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} {% trans "G-Billing" %} | {% trans "Update Expense" %} {% endblock title %}
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+         <!--breadcrumb-->
+         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">{% trans "Home" %}</div>
+            <div class="ps-3">
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb mb-0 p-0">
+                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                     </li>
+                     <li class="breadcrumb-item active" aria-current="page">{% trans "Update Expense" %}</li>
+                  </ol>
+               </nav>
+            </div>
+
+         </div>
+         <!--end breadcrumb-->
+        
+         <div class="card">
+            <div class="card-body">
+               <div class="p-4 border rounded">
+                  <form class="row g-3 needs-validation" novalidate="" method="post" action="{% url 'ebilling:updateExpense' expense.id %}">
+                     {% csrf_token %}
+                     <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">{% trans "Date" %}</label>
+                        <input type="text"  class="form-control datepicker" id="validationCustom01"  value="{{expense.date}}" placeholder="yyyy-mm-dd" name="exp_date"  required="">
+                        <div class="valid-feedback">{% trans "Looks good" %}!</div>
+                     </div>
+                     <div class="col-md-4">
+                        <label for="validationCustom02" class="form-label">{% trans "Amount" %}</label>
+                        <input type="text" class="form-control" id="validationCustom02"   value="{{expense.amount}}"  placeholder="रू.."  name="amount" required="">
+                        <div class="valid-feedback">{% trans "Looks good" %}!</div>
+                     </div>
+                     <div class="col-md-4">
+                        <label for="validationCustomUsername" class="form-label">{% trans "Paid To" %}</label>
+                        <div class="input-group has-validation"> <span class="input-group-text"
+                              id="inputGroupPrepend">@</span>
+                           <input type="text" class="form-control" value="{{expense.paid_to}}"   name="paid_to" id="validationCustomUsername"
+                              aria-describedby="inputGroupPrepend" required="">
+                           <div class="invalid-feedback">{% trans "Please enter a valid receiver" %}</div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <label for="validationCustom04" class="form-label">{% trans "Expense Type" %}</label>
+                        <select class="form-select"  name="expense_type"  required="">
+                           <option value="None" data-select2-id="6">{% trans "Please Select" %}</option>
+                           {% for e in expenses %}
+                           <option value="{{e.id}}" {% if e.name == expense.expense_type.name %} selected {% endif %} >{{e.name}}</option>
+                           {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">{% trans "Please select a valid Expense type" %}.</div>
+                     </div>
+                     <div class="col-md-3">
+                        <label for="validationCustom04" class="form-label">{% trans "Pay Mode" %}</label>
+                        <select class="form-select"  name="pay_mode" id="payMode" onchange="disableRefNo()"  required="">
+                           <option value="None" {% if expense.pay_mode == "None" %} selected {% endif %}  data-select2-id="6">{% trans "Please Select" %}</option>
+                           <option value="Cash" {% if expense.pay_mode == "Cash" %} selected {% endif %}>{% trans "Cash" %}</option>
+                           <option value="Cheque" {% if expense.pay_mode == "Cheque" %} selected {% endif %}>{% trans "Cheque" %}</option>
+                           <option value="Voucher" {% if expense.pay_mode == "Voucher" %} selected {% endif %}>{% trans "Voucher" %}</option>
+                           <option value="DD" {% if expense.pay_mode == "DD" %} selected {% endif %}>{% trans "Demand Draft" %}</option>
+                           <option value="Wallet" {% if expense.pay_mode == "Wallet" %} selected {% endif %} >{% trans "Mobile Wallet" %}</option>
+                           <option value="Bank" {% if expense.pay_mode == "Bank" %} selected {% endif %}>{% trans "Bank Transfer" %}</option>
+                        </select>
+                        <div class="invalid-feedback">{% trans "Please select a Pay mode" %}.</div>
+                     </div>
+                     <div class="col-md-3">
+                        <label for="validationCustom05" class="form-label">{% trans "Payment Receipt No" %}</label>
+                        <input type="text" class="form-control" placeholder="" value="{{expense.pay_ref_no}}"   name="payment_ref_no" id="payment_Ref" required="">
+                        <div class="invalid-feedback">{% trans "Please provide a valid Payment Receipt No" %}.</div>
+                     </div>
+
+
+                     <div class="col-md-4">
+                        <label for="validationCustomUsername" class="form-label">{% trans "Paid By" %}</label>
+                        <div class="input-group has-validation"> <span class="input-group-text"
+                              id="inputGroupPrepend">@</span>
+                           <input type="text" class="form-control" value="{{expense.paid_by}}"  name="paid_by" id="validationCustomUsername"
+                              aria-describedby="inputGroupPrepend" required="">
+                           <div class="invalid-feedback">{% trans "Please enter a valid receiver" %}</div>
+                        </div>
+                     </div>
+  
+
+                     <div class="col-md-8">
+                        <label for="validationCustom05" class="form-label">{% trans "Remark" %}</label>
+                        <textarea class="textarea form-control" name="remark" id="form-message" cols="5" rows="3">{{expense.remark}}</textarea>                                    </div>
+
+                     </div>
+                     <div class="col-12">
+                        <button class="btn btn-light" type="submit">{% trans "Save" %}</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+     
+
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+<script type="text/javascript">
+
+   function disableRefNo() {
+      var d = document.getElementById("payMode").value;
+      console.log(d)
+      if (d === "Cash") {
+         console.log(d)
+         document.getElementById("payment_Ref").disabled = true;
+      }
+      else {
+         document.getElementById("payment_Ref").disabled = false;
+
+      }
+
+   }
+
+
+
+</script>
+
+{% endblock content %}

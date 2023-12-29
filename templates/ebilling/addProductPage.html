@@ -1,0 +1,431 @@
+{% extends "ebilling/base.html" %}
+{% load i18n %}
+{% block title %} 
+{% if product %}
+{% translate "E-Billing" %} | {% translate "Edit Product" %}
+{% else %}
+{% translate "E-Billing" %} | {% translate "Add New Product " %}
+{% endif %}
+{% endblock title %}
+{% block content %}
+
+
+
+<!--wrapper-->
+<div class="wrapper">
+   <!--sidebar wrapper -->
+   {% include "ebilling/Sidebar.html" %}
+   <!--end sidebar wrapper -->
+   <!--start header -->
+   {% include "ebilling/Header.html" %}
+   <!--end header -->
+   <!--start page wrapper -->
+   <div class="page-wrapper">
+      <div class="page-content">
+
+		<!--breadcrumb-->
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+         <div class="breadcrumb-title pe-3">{% translate "Home" %}</div>
+         <div class="ps-3">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb mb-0 p-0">
+                  <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">{% trans "Product Manangement" %}</li>
+               </ol>
+            </nav>
+         </div>
+ 
+      </div>
+      <!--end breadcrumb-->
+
+      {% if product %}
+
+      <div class="card">
+         <div class="card-body p-4">
+            <h5 class="card-title">{% trans "Update Product Details" %}</h5>
+            <hr>
+            <form  method="post" action="{% url 'ebilling:editProduct' product.id %}"  enctype="multipart/form-data">
+               {% csrf_token %}
+                  <div class="form-body mt-4">
+              <div class="row">
+                <div class="col-lg-8">
+                      <div class="border border-3 p-4 rounded">
+                <div class="mb-3">
+                   <label for="inputProductTitle" class="form-label">{% trans "Product Title" %}*</label>
+                   <input type="text" required class="form-control" value="{{product.name}}" name="name" id="inputProductTitle" placeholder="{% trans "Enter product title" %}">
+                  </div>
+                  <div class="mb-3">
+                     <label for="inputProductTitle" class="form-label">Print Product Title</label>
+                     <input type="text" required class="form-control" value="{{product.print_name}}" name="print_name" id="inputProductTitle" placeholder="{% trans "Enter print product title" %}">
+                    </div>
+                  <div class="mb-3">
+                   <label for="inputProductDescription" class="form-label">{% trans "Description" %}</label>
+                   <textarea class="form-control" name="description"  id="inputProductDescription" rows="3">{{product.description}} </textarea>
+                  </div>
+
+                  <div class="mb-3">
+                     <div class="row g-3">
+                     <div class="col-md-6">
+                        <label for="inputProductTags" class="form-label">{% trans "Opening Stock" %}*</label>
+                        <input type="text" class="form-control" name="opening_stock"  value="{{product.opening_stock}}"  id="inputProductTags" >
+                       </div>
+                       <div class="col-md-6">
+                        <label for="inputProductTags" class="form-label">{% trans "Opening Stock Value" %}*</label>
+                        <input type="text" class="form-control"  value="{{product.opening_stock_price}}"    name="opening_stock_value"  id="inputProductTags" >
+                       </div>
+                    
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                     <div class="row g-3">
+                        <div class="col-md-6">
+                           <label for="inputProductTags" class="form-label">{% trans "VAT" %}*</label>
+                           <input type="text" class="form-control" value="{{product.vat}}" name="vat" id="vatField" required >
+                          </div>
+                     <div class="col-md-6">
+                        <label for="inputProductTags" class="form-label">{% trans "HSN/SAC Code" %}</label>
+                        <input type="text" class="form-control"   value="{{product.hsn_or_sac_code}}" name="hsn_sac_code" id="hsnField"   placeholder="XXXX-XX-XXXX">
+                       </div>
+                   
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3">
+                     <div class="row g-3">
+                     <div class="col-md-6">
+                        <label for="inputProductTags" class="form-label">{% trans "Serial No" %}.</label>
+                        <input type="text" class="form-control"  value="{{product.serial_no}}" name="serial_no" id="inputProductTags" placeholder="">
+                       </div>
+                       <div class="col-md-6">
+                        <label for="inputProductTags" class="form-label">{% trans "Sale Discount" %}</label>
+                        <input type="number" class="form-control" value="{{product.discount}}"  name="sale_discount"  id="inputProductTags" placeholder="%">
+                       </div>
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3">
+                     <div class="row g-6">
+                     <div class="col-md-4">
+                        <label for="inputProductTags" class="form-label">{% trans "Print Description" %}</label>
+                        <input class="form-check-input" type="checkbox" {% if product.is_print_description == True %} checked {% endif %}  name="isPrintDescription" id="isPrintDescription" >
+                       </div>
+                       <div class="col-md-4">
+                        <label for="inputProductTags" class="form-label">{% trans "One Click Sale" %}</label>
+                        <input class="form-check-input" type="checkbox" {% if product.is_one_click_sale == True %} checked {% endif %}   name="one_click_sale" id="one_click_sale" >
+                       </div>
+
+                       <div class="col-md-4">
+                        <label for="inputProductTags" class="form-label">{% trans "Not For Sale" %}</label>
+                        <input class="form-check-input" type="checkbox"  {% if product.is_not_for_sale == True %} checked {% endif %} name="not_for_sale" id="not_for_sale"  >
+                       </div>
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3">
+                     <div class="row g-6">
+                        <div class="col-md-2">
+                           </div>
+                        <div class="col-md-4">
+                           <label for="inputProductTags" class="form-label">{% trans "Print Serial No" %}.</label>
+                           <input class="form-check-input" type="checkbox"  {% if product.is_print_serial_no == True %} checked {% endif %}  name="print_serial_no" id="print_serial_no" >
+                          </div>
+                          <div class="col-md-4">
+                           <label for="inputProductTags" class="form-label">{% trans "Enable Tracking" %}</label>
+                           <input class="form-check-input" type="checkbox"  {% if product.is_enabled_for_tracking == True %} checked {% endif %}  id="flexSwitchCheckChecked" >
+                          </div>
+                          <div class="col-md-2">
+                        </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="input-group mb-3">
+                     <label class="input-group-text" for="inputGroupFile01">{% trans "Upload Product Pic" %}</label>
+                     <input type="file"  name="sample" class="form-control" id="inputGroupFile01">
+                     <img src="/media/{{product.picture}}" height="100px" width="100px" />
+                  </div>
+                       </div>
+                </div>
+                <div class="col-lg-4">
+                <div class="border border-3 p-4 rounded">
+                         <div class="row g-3">
+                   <div class="col-md-6">
+                      <label for="inputPrice" class="form-label">{% trans "Sale Price" %}*</label>
+                      <input type="number" class="form-control"  value="{{product.sale_price}}" name="sale_price" required placeholder="00.00">
+                     </div>
+                     <div class="col-md-6">
+                      <label for="inputCompareatprice" class="form-label">{% trans "Purchase Price" %}*</label>
+                      <input type="number" class="form-control"  value="{{product.purchase_price}}" name="purchase_price" required placeholder="00.00">
+                     </div>
+                     <div class="col-md-6">
+                      <label for="inputCostPerPrice" class="form-label">{% trans "Min. Sale Price" %}</label>
+                      <input type="number" class="form-control"  value="{{product.min_sale_price}}"    name="min_sale_price" id="min_sale_price" placeholder="00.00">
+                     </div>
+                     <div class="col-md-6">
+                      <label for="inputStarPoints" class="form-label">{% trans "M.R.P" %}</label>
+                      <input type="number" class="form-control" name="mrp"  value="{{product.mrp}}"  id="mrp" placeholder="00.00">
+                     </div>
+                     <div class="col-12">
+                      <label for="inputProductType" class="form-label">{% trans "Group" %}*</label>
+                      <select class="form-select" required name="group" id="group" >
+                         <option></option>
+                         {% for g in groups %}
+                         <option value="{{g.id}}" {% if product.group.id == g.id %} selected {% endif %} data-vat="{{g.vat}}" data-hsn="{{g.hsn_or_sac_code}}" >{{g.name}}</option>
+                         {% endfor %}
+                        </select>
+                     </div>
+                     <div class="col-12">
+                      <label for="inputVendor" class="form-label">{% trans "Brand" %}*</label>
+                      <select  required  name="brand" class="form-select" id="inputVendor">
+                         <option></option>
+                         {% for b in brands %}
+                         <option value="{{b.id}}" {% if product.brand.id == b.id %} selected {% endif %}>{{b.name}}</option>
+                         {% endfor %}
+                        </select>
+                     </div>
+                     <div class="col-12">
+                        <label for="inputCollection" class="form-label">{% trans "Item Type" %}*</label>
+                        <select required name="item_type"   class="form-select" id="inputCollection">
+                           <option></option>
+                           {% for u in categories %}
+                           <option value="{{u.id}}"  {% if product.category.id == u.id %} selected {% endif %}  >{{u.name}}</option>
+                           {% endfor %}
+                          </select>
+                       </div>
+                     <div class="col-12">
+                      <label for="inputCollection" class="form-label">{% trans "UNIT" %}</label>
+                      <select required  name="unit"  class="form-select" id="inputCollection">
+                        {% for u in units %}
+                        <option value="{{u.id}}" {% if product.unit.id == u.id %} selected {% endif %} >{{u.name}}</option>
+                        {% endfor %}
+                        </select>
+                     </div>
+                     <div class="col-12">
+                      <label for="inputProductTags" class="form-label">{% trans "Item Code" %}</label>
+                      <input type="text" name="item_code" value="{{product.item_code}}" class="form-control" id="inputProductTags" placeholder="{% trans "Enter Item Code" %}">
+                     </div>
+                     <div class="col-12">
+                        <div class="d-grid">
+                                    <button type="submit" class="btn btn-light">{% trans "Save Product" %}</button>
+                        </div>
+                     </div>
+                  </div> 
+               </div>
+               </div>
+             </div><!--end row-->
+            </form>
+          </div>
+         </div>
+
+      {% else %}
+
+      <div class="card">
+         <div class="card-body p-4">
+            <h5 class="card-title">{% trans "Add New Product" %}</h5>
+            <hr>
+            <form  method="post" action="." enctype="multipart/form-data">
+               {% csrf_token %}
+                  <div class="form-body mt-4">
+              <div class="row">
+                <div class="col-lg-8">
+                      <div class="border border-3 p-4 rounded">
+                <div class="mb-3">
+                   <label for="inputProductTitle" class="form-label">{% trans "Product Title" %}*</label>
+                   <input type="text" required class="form-control" name="name" id="inputProductTitle" placeholder="{% trans "Enter product title" %}">
+                  </div>
+                  <div class="mb-3">
+                     <label for="inputProductTitle" class="form-label">{% trans "Print Product Title" %}</label>
+                     <input type="text" required class="form-control" name="print_name" id="inputProductTitle" placeholder="{% trans "Enter print product title" %}">
+                    </div>
+                  <div class="mb-3">
+                   <label for="inputProductDescription" class="form-label">{% trans "Description" %}</label>
+                   <textarea class="form-control" name="description"  id="inputProductDescription" rows="3"></textarea>
+                  </div>
+
+                  <div class="mb-3">
+                     <div class="row g-3">
+                     <div class="col-md-6">
+                        <label for="inputProductTags" class="form-label">{% translate "Opening Stock" %}*</label>
+                        <input type="text" class="form-control" name="opening_stock"   id="inputProductTags" >
+                       </div>
+                       <div class="col-md-6">
+                        <label for="inputProductTags" class="form-label">Opening Stock Value*</label>
+                        <input type="text" class="form-control"  name="opening_stock_value"  id="inputProductTags" >
+                       </div>
+                    
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                     <div class="row g-3">
+                        <div class="col-md-6">
+                           <label for="inputProductTags" class="form-label">{% translate "VAT" %}*</label>
+                           <input type="text" class="form-control" name="vat" id="vatField" required >
+                          </div>
+                     <div class="col-md-6">
+                        <label for="inputProductTags" class="form-label">{% translate "HSN/SAC Code" %}</label>
+                        <input type="text" class="form-control"name="hsn_sac_code" id="hsnField"   placeholder="XXXX-XX-XXXX">
+                       </div>
+                   
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3">
+                     <div class="row g-3">
+                     <div class="col-md-6">
+                        <label for="inputProductTags" class="form-label">{% translate "Serial No" %}.</label>
+                        <input type="text" class="form-control" name="serial_no" id="inputProductTags" placeholder="">
+                       </div>
+                       <div class="col-md-6">
+                        <label for="inputProductTags" class="form-label">Sale Discount</label>
+                        <input type="number" class="form-control"  name="sale_discount"  id="inputProductTags" placeholder="%">
+                       </div>
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3">
+                     <div class="row g-6">
+                     <div class="col-md-4">
+                        <label for="inputProductTags" class="form-label">{% translate "Print Description" %}</label>
+                        <input class="form-check-input" type="checkbox" name="isPrintDescription" id="isPrintDescription" >
+                       </div>
+                       <div class="col-md-4">
+                        <label for="inputProductTags" class="form-label">{% trans "One Click Sale" %}</label>
+                        <input class="form-check-input" type="checkbox"name="one_click_sale" id="one_click_sale" >
+                       </div>
+
+                       <div class="col-md-4">
+                        <label for="inputProductTags" class="form-label">{% trans "Not For Sale" %}</label>
+                        <input class="form-check-input" type="checkbox" name="not_for_sale" id="not_for_sale"  >
+                       </div>
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3">
+                     <div class="row g-6">
+                        <div class="col-md-2">
+                           </div>
+                        <div class="col-md-4">
+                           <label for="inputProductTags" class="form-label">{% trans "Print Serial No" %}.</label>
+                           <input class="form-check-input" type="checkbox" name="print_serial_no" id="print_serial_no" >
+                          </div>
+                          <div class="col-md-4">
+                           <label for="inputProductTags" class="form-label">{% trans "Enable Tracking" %}</label>
+                           <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
+                          </div>
+                          <div class="col-md-2">
+                        </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="input-group mb-3">
+                     <label class="input-group-text" for="inputGroupFile01">{% trans "Upload Product Pic" %}</label>
+                     <input type="file"  name="sample" class="form-control" id="inputGroupFile01">
+                  </div>
+                       </div>
+                </div>
+                <div class="col-lg-4">
+                <div class="border border-3 p-4 rounded">
+                         <div class="row g-3">
+                   <div class="col-md-6">
+                      <label for="inputPrice" class="form-label">{% trans "Sale Price" %}*</label>
+                      <input type="number" class="form-control" name="sale_price" required placeholder="00.00">
+                     </div>
+                     <div class="col-md-6">
+                      <label for="inputCompareatprice" class="form-label">{% trans "Purchase Price" %}*</label>
+                      <input type="number" class="form-control" name="purchase_price" required placeholder="00.00">
+                     </div>
+                     <div class="col-md-6">
+                      <label for="inputCostPerPrice" class="form-label">{% trans "Min. Sale Price" %}</label>
+                      <input type="number" class="form-control" name="min_sale_price" id="min_sale_price" placeholder="00.00">
+                     </div>
+                     <div class="col-md-6">
+                      <label for="inputStarPoints" class="form-label">{% trans "M.R.P" %}</label>
+                      <input type="number" class="form-control" name="mrp"  id="mrp" placeholder="00.00">
+                     </div>
+                     <div class="col-12">
+                      <label for="inputProductType" class="form-label">{% trans "Group" %}*</label>
+                      <select class="form-select" required name="group" id="group" >
+                         <option></option>
+                         {% for g in groups %}
+                         <option value="{{g.id}}" data-vat="{{g.vat}}" data-hsn="{{g.hsn_or_sac_code}}" >{{g.name}}</option>
+                         {% endfor %}
+                        </select>
+                     </div>
+                     <div class="col-12">
+                      <label for="inputVendor" class="form-label">{% trans "Brand" %}*</label>
+                      <select  required  name="brand" class="form-select" id="inputVendor">
+                         <option></option>
+                         {% for b in brands %}
+                         <option value="{{b.id}}">{{b.name}}</option>
+                         {% endfor %}
+                        </select>
+                     </div>
+                     <div class="col-12">
+                        <label for="inputCollection" class="form-label">{% trans "Item Type" %}*</label>
+                        <select required name="item_type"   class="form-select" id="inputCollection">
+                           <option></option>
+                           {% for u in categories %}
+                           <option value="{{u.id}}">{{u.name}}</option>
+                           {% endfor %}
+                          </select>
+                       </div>
+                     <div class="col-12">
+                      <label for="inputCollection" class="form-label">{% trans "UNIT" %}</label>
+                      <select required  name="unit"  class="form-select" id="inputCollection">
+                        {% for u in units %}
+                        <option value="{{u.id}}">{{u.name}}</option>
+                        {% endfor %}
+                        </select>
+                     </div>
+                     <div class="col-12">
+                      <label for="inputProductTags" class="form-label">{% trans "Item Code" %}</label>
+                      <input type="text" name="item_code" class="form-control" id="inputProductTags" placeholder="{% trans "Enter Item Code" %}">
+                     </div>
+                     <div class="col-12">
+                        <div class="d-grid">
+                                    <button type="submit" class="btn btn-light">{% trans "Save Product" %}</button>
+                        </div>
+                     </div>
+                  </div> 
+               </div>
+               </div>
+             </div><!--end row-->
+            </form>
+          </div>
+         </div>
+   
+{% endif %}
+
+
+
+   
+      </div>
+   </div>
+   <!--end page wrapper -->
+   <!--start overlay-->
+   <div class="overlay toggle-icon"></div>
+   <!--end overlay-->
+   <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+   <!--End Back To Top Button-->
+   {% include "ebilling/Footer.html" %}
+</div>
+<!--end wrapper-->
+<!--start switcher-->
+{% include "ebilling/Switcher.html" %}
+<!--end switcher-->
+<!-- Bootstrap JS -->
+
+
+{% endblock content %}

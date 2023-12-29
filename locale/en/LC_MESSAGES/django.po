@@ -1,0 +1,2708 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-22 12:48+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\ebilling\views.py:63
+msgid "Welcome"
+msgstr ""
+
+#: .\ebilling\views.py:67
+msgid "account done not exit plz sign in"
+msgstr ""
+
+#: .\ebilling\views.py:78
+msgid "Email already used!!"
+msgstr ""
+
+#: .\ebilling\views.py:115
+msgid "Date format is incorrect, Eg: dd/mm/yyyy"
+msgstr ""
+
+#: .\ebilling\views.py:129
+msgid "Company Detail Updated Successfully"
+msgstr ""
+
+#: .\ebilling\views.py:2146
+msgid "Your backup has restored successfully."
+msgstr ""
+
+#: .\ebilling\views.py:2148
+msgid "Sorry, you are not authenticate for this file."
+msgstr ""
+
+#: .\ebilling\views.py:2244
+msgid "User Registration"
+msgstr ""
+
+#: .\ebilling\views.py:2256
+msgid "Update User Details"
+msgstr ""
+
+#: .\ebilling\views.py:2293
+msgid "(User) Has Been Removed Form Your Company"
+msgstr ""
+
+#: .\ebilling\views.py:2321
+msgid "User Password Has Been Changed"
+msgstr ""
+
+#: .\ebilling\views.py:2331
+msgid "'s information has been updated"
+msgstr ""
+
+#: .\ebilling\views.py:2331
+msgid " ID: "
+msgstr ""
+
+#: .\ebilling\views.py:2368
+msgid "A new user has been created successfully"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:3
+#: .\templates\ebilling\AddExpensePage.html:3
+#: .\templates\ebilling\AddSupplierPage.html:3
+#: .\templates\ebilling\BankPage.html:3 .\templates\ebilling\Blueprint.html:3
+#: .\templates\ebilling\BrandPage.html:3
+#: .\templates\ebilling\BrandPageTest.html:3
+#: .\templates\ebilling\DepartmentPage.html:3
+#: .\templates\ebilling\DesignationPage.html:3
+#: .\templates\ebilling\ExpenseTypePage.html:3
+#: .\templates\ebilling\GroupPage.html:3 .\templates\ebilling\Homepage.html:3
+#: .\templates\ebilling\LoginPage.html:3
+#: .\templates\ebilling\SearchAndManageClientsPage.html:3
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:3
+#: .\templates\ebilling\SearchAndManageProductService.html:3
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:3
+#: .\templates\ebilling\SettingsPage.html:3
+#: .\templates\ebilling\TaxesPage.html:3 .\templates\ebilling\UnitPage.html:3
+#: .\templates\ebilling\UpdateClientPage.html:3
+#: .\templates\ebilling\UpdateCompanyPage.html:3
+#: .\templates\ebilling\UpdateExpensePage.html:3
+#: .\templates\ebilling\UpdateSupplierPage.html:3
+#: .\templates\ebilling\UserFromPage.html:3
+#: .\templates\ebilling\add_edit_tax.html:3
+#: .\templates\ebilling\backup_restore.html:3
+#: .\templates\ebilling\history.html:3 .\templates\ebilling\user.html:3
+msgid "G-Billing"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:3
+#: .\templates\ebilling\AddClientPage.html:28
+msgid "Add New Client"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:22
+#: .\templates\ebilling\AddExpensePage.html:22
+#: .\templates\ebilling\AddServicePage.html:28
+#: .\templates\ebilling\AddSupplierPage.html:22
+#: .\templates\ebilling\BankPage.html:22 .\templates\ebilling\BrandPage.html:22
+#: .\templates\ebilling\BrandPageTest.html:22
+#: .\templates\ebilling\DepartmentPage.html:22
+#: .\templates\ebilling\DesignationPage.html:22
+#: .\templates\ebilling\DraftPurchasePage.html:29
+#: .\templates\ebilling\DraftSalePage.html:30
+#: .\templates\ebilling\ExpenseTypePage.html:22
+#: .\templates\ebilling\GroupPage.html:22
+#: .\templates\ebilling\SearchAndManageClientsPage.html:22
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:22
+#: .\templates\ebilling\SearchAndManageProductService.html:22
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:22
+#: .\templates\ebilling\SettingsPage.html:22
+#: .\templates\ebilling\UnitPage.html:22
+#: .\templates\ebilling\UpdateClientPage.html:22
+#: .\templates\ebilling\UpdateExpensePage.html:22
+#: .\templates\ebilling\UpdateSupplierPage.html:22
+#: .\templates\ebilling\UserFromPage.html:26
+#: .\templates\ebilling\addProductPage.html:28
+#: .\templates\ebilling\add_edit_tax.html:22
+#: .\templates\ebilling\backup_restore.html:27
+#: .\templates\ebilling\history.html:22 .\templates\ebilling\user.html:22
+msgid "Home"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:42
+msgid "Client Registration"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:48
+#: .\templates\ebilling\UpdateClientPage.html:48
+msgid "Full Name"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:49
+#: .\templates\ebilling\AddSupplierPage.html:49
+#: .\templates\ebilling\UpdateClientPage.html:49
+#: .\templates\ebilling\UpdateSupplierPage.html:49
+msgid "Enter name"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:52
+#: .\templates\ebilling\AddSupplierPage.html:52
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:76
+#: .\templates\ebilling\UpdateClientPage.html:52
+#: .\templates\ebilling\UpdateCompanyPage.html:57
+#: .\templates\ebilling\UpdateCompanyPage.html:130
+#: .\templates\ebilling\UpdateSupplierPage.html:52
+#: .\templates\ebilling\user.html:61
+msgid "Email"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:53
+#: .\templates\ebilling\AddSupplierPage.html:53
+#: .\templates\ebilling\UpdateClientPage.html:53
+#: .\templates\ebilling\UpdateSupplierPage.html:53
+#: .\templates\ebilling\UserFromPage.html:70
+msgid "Enter email"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:56
+#: .\templates\ebilling\AddSupplierPage.html:56
+#: .\templates\ebilling\UpdateClientPage.html:56
+#: .\templates\ebilling\UpdateSupplierPage.html:56
+msgid "PAN Number"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:57
+#: .\templates\ebilling\AddSupplierPage.html:57
+#: .\templates\ebilling\UpdateClientPage.html:57
+#: .\templates\ebilling\UpdateSupplierPage.html:57
+msgid "Enter PAN no"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:61
+#: .\templates\ebilling\AddSupplierPage.html:61
+#: .\templates\ebilling\UpdateClientPage.html:61
+#: .\templates\ebilling\UpdateSupplierPage.html:61
+msgid "VAT No"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:62
+#: .\templates\ebilling\AddSupplierPage.html:62
+#: .\templates\ebilling\UpdateClientPage.html:62
+#: .\templates\ebilling\UpdateSupplierPage.html:62
+msgid "Enter VAT no"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:67
+msgid "Mobile No."
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:68
+#: .\templates\ebilling\AddSupplierPage.html:68
+#: .\templates\ebilling\UpdateClientPage.html:68
+#: .\templates\ebilling\UpdateSupplierPage.html:68
+msgid "Enter mobile no"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:71
+#: .\templates\ebilling\AddSupplierPage.html:71
+#: .\templates\ebilling\UpdateClientPage.html:71
+#: .\templates\ebilling\UpdateSupplierPage.html:71
+msgid "Phone No"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:72
+#: .\templates\ebilling\AddSupplierPage.html:72
+#: .\templates\ebilling\UpdateClientPage.html:72
+#: .\templates\ebilling\UpdateSupplierPage.html:72
+msgid "Enter phone no"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:77
+#: .\templates\ebilling\AddSupplierPage.html:82
+#: .\templates\ebilling\BankPage.html:175
+#: .\templates\ebilling\UpdateClientPage.html:77
+#: .\templates\ebilling\UpdateSupplierPage.html:82
+msgid "Account Type"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:79
+#: .\templates\ebilling\AddSupplierPage.html:84
+#: .\templates\ebilling\UpdateClientPage.html:79
+#: .\templates\ebilling\UpdateSupplierPage.html:84
+msgid "Credit(Cr.)"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:80
+#: .\templates\ebilling\AddSupplierPage.html:85
+#: .\templates\ebilling\UpdateClientPage.html:80
+#: .\templates\ebilling\UpdateSupplierPage.html:85
+msgid "Debit(Dr.)"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:85
+#: .\templates\ebilling\UpdateClientPage.html:85
+msgid "Identity Document Type"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:87
+#: .\templates\ebilling\UpdateClientPage.html:87
+msgid "N/A"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:88
+#: .\templates\ebilling\UpdateClientPage.html:88
+msgid "Citizenship Card"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:89
+#: .\templates\ebilling\UpdateClientPage.html:89
+msgid "Driving License"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:90
+msgid "PAN Card"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:91
+#: .\templates\ebilling\UpdateClientPage.html:91
+msgid "Passport"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:92
+#: .\templates\ebilling\UpdateClientPage.html:92
+msgid "Voter ID"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:96
+#: .\templates\ebilling\UpdateClientPage.html:97
+msgid "Document No"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:97
+#: .\templates\ebilling\UpdateClientPage.html:98
+msgid "Enter doument no"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:104
+#: .\templates\ebilling\AddSupplierPage.html:119
+#: .\templates\ebilling\BankPage.html:111
+#: .\templates\ebilling\BankPage.html:185
+#: .\templates\ebilling\UpdateClientPage.html:105
+#: .\templates\ebilling\UpdateSupplierPage.html:120
+msgid "Opening Balance"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:105
+#: .\templates\ebilling\AddClientPage.html:116
+#: .\templates\ebilling\AddSupplierPage.html:120
+#: .\templates\ebilling\UpdateClientPage.html:106
+#: .\templates\ebilling\UpdateClientPage.html:117
+#: .\templates\ebilling\UpdateSupplierPage.html:121
+msgid "Rs"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:108
+#: .\templates\ebilling\UpdateClientPage.html:109
+msgid "Credit Allowed"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:110
+#: .\templates\ebilling\UpdateClientPage.html:111
+msgid "No"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:111
+#: .\templates\ebilling\UpdateClientPage.html:112
+msgid "Yes"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:115
+#: .\templates\ebilling\UpdateClientPage.html:116
+msgid "Credit Limit"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:126
+#: .\templates\ebilling\AddSupplierPage.html:132
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:71
+#: .\templates\ebilling\UpdateClientPage.html:127
+#: .\templates\ebilling\UpdateCompanyPage.html:86
+#: .\templates\ebilling\UpdateCompanyPage.html:182
+#: .\templates\ebilling\UpdateSupplierPage.html:133
+msgid "City"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:127
+#: .\templates\ebilling\AddSupplierPage.html:133
+#: .\templates\ebilling\UpdateClientPage.html:128
+#: .\templates\ebilling\UpdateSupplierPage.html:134
+msgid "Enter city"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:131
+#: .\templates\ebilling\AddSupplierPage.html:137
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:72
+#: .\templates\ebilling\UpdateClientPage.html:132
+#: .\templates\ebilling\UpdateCompanyPage.html:90
+#: .\templates\ebilling\UpdateCompanyPage.html:192
+#: .\templates\ebilling\UpdateSupplierPage.html:138
+msgid "District"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:132
+#: .\templates\ebilling\AddSupplierPage.html:138
+#: .\templates\ebilling\UpdateClientPage.html:133
+#: .\templates\ebilling\UpdateSupplierPage.html:139
+msgid "Enter district"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:136
+#: .\templates\ebilling\AddSupplierPage.html:142
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:73
+#: .\templates\ebilling\UpdateClientPage.html:137
+#: .\templates\ebilling\UpdateCompanyPage.html:94
+#: .\templates\ebilling\UpdateCompanyPage.html:201
+#: .\templates\ebilling\UpdateSupplierPage.html:143
+msgid "Province"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:137
+#: .\templates\ebilling\AddSupplierPage.html:143
+#: .\templates\ebilling\UpdateClientPage.html:138
+#: .\templates\ebilling\UpdateSupplierPage.html:144
+msgid "Enter province"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:141
+#: .\templates\ebilling\AddSupplierPage.html:147
+#: .\templates\ebilling\UpdateClientPage.html:142
+#: .\templates\ebilling\UpdateSupplierPage.html:148
+msgid "Zip Code"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:142
+#: .\templates\ebilling\AddSupplierPage.html:148
+#: .\templates\ebilling\UpdateClientPage.html:143
+#: .\templates\ebilling\UpdateSupplierPage.html:149
+msgid "Enter pincode"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:145
+#: .\templates\ebilling\AddSupplierPage.html:151
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:75
+#: .\templates\ebilling\UpdateClientPage.html:146
+#: .\templates\ebilling\UpdateCompanyPage.html:230
+#: .\templates\ebilling\UpdateSupplierPage.html:152
+msgid "Country"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:146
+#: .\templates\ebilling\AddSupplierPage.html:152
+#: .\templates\ebilling\UpdateClientPage.html:147
+#: .\templates\ebilling\UpdateSupplierPage.html:153
+msgid "Nepal"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:150
+#: .\templates\ebilling\AddClientPage.html:151
+#: .\templates\ebilling\AddSupplierPage.html:156
+#: .\templates\ebilling\AddSupplierPage.html:157
+#: .\templates\ebilling\UpdateClientPage.html:151
+#: .\templates\ebilling\UpdateClientPage.html:152
+#: .\templates\ebilling\UpdateSupplierPage.html:157
+msgid "Billing Address"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:156
+#: .\templates\ebilling\AddSupplierPage.html:162
+#: .\templates\ebilling\UpdateClientPage.html:157
+#: .\templates\ebilling\UpdateSupplierPage.html:163
+msgid "Remark/Note"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:157
+#: .\templates\ebilling\AddSupplierPage.html:163
+#: .\templates\ebilling\UpdateClientPage.html:158
+#: .\templates\ebilling\UpdateSupplierPage.html:158
+#: .\templates\ebilling\UpdateSupplierPage.html:164
+msgid "Billing address"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:164
+#: .\templates\ebilling\UpdateClientPage.html:165
+msgid "Upload Client Profile Pic (150px X 150px)"
+msgstr ""
+
+#: .\templates\ebilling\AddClientPage.html:172
+#: .\templates\ebilling\AddExpensePage.html:107
+#: .\templates\ebilling\AddSupplierPage.html:169
+#: .\templates\ebilling\DraftPurchasePage.html:249
+#: .\templates\ebilling\DraftPurchasePage.html:313
+#: .\templates\ebilling\DraftSalePage.html:250
+#: .\templates\ebilling\DraftSalePage.html:313
+#: .\templates\ebilling\UpdateClientPage.html:174
+#: .\templates\ebilling\UpdateExpensePage.html:107
+#: .\templates\ebilling\UpdateSupplierPage.html:170
+#: .\templates\ebilling\UserFromPage.html:138
+msgid "Save"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:3
+#: .\templates\ebilling\sidebar.html:116
+msgid "Add Expense"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:28
+msgid "Add/Update Expense"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:42
+#: .\templates\ebilling\Homepage.html:627
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:67
+#: .\templates\ebilling\UpdateExpensePage.html:42
+#: .\templates\ebilling\history.html:50
+msgid "Date"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:44
+#: .\templates\ebilling\AddExpensePage.html:49
+msgid "Looks good!"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:47
+#: .\templates\ebilling\DraftPurchasePage.html:160
+#: .\templates\ebilling\DraftSalePage.html:161
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:69
+#: .\templates\ebilling\UpdateExpensePage.html:47
+msgid "Amount"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:52
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:70
+#: .\templates\ebilling\UpdateExpensePage.html:52
+msgid "Paid To"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:57
+#: .\templates\ebilling\AddExpensePage.html:96
+#: .\templates\ebilling\UpdateExpensePage.html:57
+#: .\templates\ebilling\UpdateExpensePage.html:96
+msgid "Please enter a valid receiver"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:61
+#: .\templates\ebilling\ExpenseTypePage.html:52
+#: .\templates\ebilling\ExpenseTypePage.html:83
+#: .\templates\ebilling\ExpenseTypePage.html:99
+#: .\templates\ebilling\UpdateExpensePage.html:61
+msgid "Expense Type"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:63
+#: .\templates\ebilling\AddExpensePage.html:73
+#: .\templates\ebilling\DraftPurchasePage.html:203
+#: .\templates\ebilling\DraftSalePage.html:204
+#: .\templates\ebilling\UpdateExpensePage.html:63
+#: .\templates\ebilling\UpdateExpensePage.html:73
+msgid "Please Select"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:68
+msgid "Please select a valid Expense type."
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:71
+#: .\templates\ebilling\DraftPurchasePage.html:201
+#: .\templates\ebilling\DraftSalePage.html:202
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:72
+#: .\templates\ebilling\UpdateExpensePage.html:71
+msgid "Pay Mode"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:74
+#: .\templates\ebilling\DraftPurchasePage.html:204
+#: .\templates\ebilling\DraftSalePage.html:205
+#: .\templates\ebilling\UpdateExpensePage.html:74
+msgid "Cash"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:75
+#: .\templates\ebilling\DraftPurchasePage.html:205
+#: .\templates\ebilling\DraftSalePage.html:206
+#: .\templates\ebilling\UpdateExpensePage.html:75
+msgid "Cheque"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:76
+#: .\templates\ebilling\DraftPurchasePage.html:206
+#: .\templates\ebilling\DraftSalePage.html:207
+#: .\templates\ebilling\UpdateExpensePage.html:76
+msgid "Voucher"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:77
+#: .\templates\ebilling\DraftPurchasePage.html:207
+#: .\templates\ebilling\DraftSalePage.html:208
+#: .\templates\ebilling\UpdateExpensePage.html:77
+msgid "Demand Draft"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:78
+#: .\templates\ebilling\DraftPurchasePage.html:208
+#: .\templates\ebilling\DraftSalePage.html:209
+#: .\templates\ebilling\UpdateExpensePage.html:78
+msgid "Mobile Wallet"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:79
+#: .\templates\ebilling\DraftPurchasePage.html:209
+#: .\templates\ebilling\DraftSalePage.html:210
+#: .\templates\ebilling\UpdateExpensePage.html:79
+msgid "Bank Transfer"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:81
+msgid "Please select a Pay mode."
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:84
+#: .\templates\ebilling\UpdateExpensePage.html:84
+msgid "Payment Receipt No"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:86
+msgid "Please provide a valid Payment Receipt No."
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:91
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:74
+#: .\templates\ebilling\UpdateExpensePage.html:91
+msgid "Paid By"
+msgstr ""
+
+#: .\templates\ebilling\AddExpensePage.html:102
+#: .\templates\ebilling\DraftPurchasePage.html:241
+#: .\templates\ebilling\DraftSalePage.html:242
+#: .\templates\ebilling\UpdateExpensePage.html:102
+msgid "Remark"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:5
+#: .\templates\ebilling\AddServicePage.html:7
+#: .\templates\ebilling\DraftPurchasePage.html:5
+#: .\templates\ebilling\DraftPurchasePage.html:7
+#: .\templates\ebilling\DraftSalePage.html:5
+#: .\templates\ebilling\DraftSalePage.html:7
+#: .\templates\ebilling\addProductPage.html:5
+#: .\templates\ebilling\addProductPage.html:7 .\templates\ebilling\base.html:4
+msgid "E-Billing"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:5
+msgid "Edit Service"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:7
+#: .\templates\ebilling\AddServicePage.html:166
+msgid "Add New Service"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:34
+msgid "Service Manangement"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:46
+msgid "Update Service Details"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:55
+#: .\templates\ebilling\AddServicePage.html:175
+msgid "Service Title"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:56
+#: .\templates\ebilling\AddServicePage.html:176
+msgid "Enter Service title"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:59
+#: .\templates\ebilling\AddServicePage.html:179
+msgid "Print Service Title"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:60
+#: .\templates\ebilling\AddServicePage.html:180
+msgid "Enter print Service title"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:67
+#: .\templates\ebilling\AddServicePage.html:186
+#: .\templates\ebilling\DraftPurchasePage.html:66
+#: .\templates\ebilling\DraftSalePage.html:67
+#: .\templates\ebilling\GroupPage.html:109
+#: .\templates\ebilling\GroupPage.html:149
+#: .\templates\ebilling\SearchAndManageClientsPage.html:72
+#: .\templates\ebilling\SearchAndManageProductService.html:78
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:78
+#: .\templates\ebilling\addProductPage.html:84
+#: .\templates\ebilling\addProductPage.html:268
+msgid "VAT"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:71
+#: .\templates\ebilling\AddServicePage.html:190
+#: .\templates\ebilling\addProductPage.html:88
+#: .\templates\ebilling\addProductPage.html:272
+msgid "HSN/SAC Code"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:78
+#: .\templates\ebilling\AddServicePage.html:197
+#: .\templates\ebilling\addProductPage.html:210
+#: .\templates\ebilling\addProductPage.html:393
+msgid "Item Code"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:79
+#: .\templates\ebilling\AddServicePage.html:198
+#: .\templates\ebilling\addProductPage.html:211
+#: .\templates\ebilling\addProductPage.html:394
+msgid "Enter Item Code"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:88
+#: .\templates\ebilling\AddServicePage.html:206
+msgid "Service Description"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:109
+#: .\templates\ebilling\AddServicePage.html:217
+#: .\templates\ebilling\SearchAndManageProductService.html:68
+#: .\templates\ebilling\addProductPage.html:175
+#: .\templates\ebilling\addProductPage.html:358
+msgid "Group"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:121
+#: .\templates\ebilling\AddServicePage.html:228
+msgid "Service Charge"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:128
+#: .\templates\ebilling\AddServicePage.html:235
+msgid "Min. Service Charge"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:134
+#: .\templates\ebilling\AddServicePage.html:241
+#: .\templates\ebilling\addProductPage.html:103
+msgid "Sale Discount"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:141
+#: .\templates\ebilling\AddServicePage.html:248
+msgid "Print Description(Invoice)"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:151
+msgid "Update Service"
+msgstr ""
+
+#: .\templates\ebilling\AddServicePage.html:255
+msgid "Save Service"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:3
+#: .\templates\ebilling\AddSupplierPage.html:28
+msgid "Add New Supplier"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:42
+msgid "Supplier Registration"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:48
+#: .\templates\ebilling\DraftPurchasePage.html:78
+#: .\templates\ebilling\DraftSalePage.html:79
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:67
+#: .\templates\ebilling\UpdateSupplierPage.html:48
+msgid "Supplier Name"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:67
+#: .\templates\ebilling\UpdateClientPage.html:67
+#: .\templates\ebilling\UpdateSupplierPage.html:67
+msgid "Mobile No"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:76
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:68
+#: .\templates\ebilling\UpdateSupplierPage.html:76
+msgid "Contact Person"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:77
+#: .\templates\ebilling\UpdateSupplierPage.html:77
+msgid "Enter contact person"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:90
+#: .\templates\ebilling\BankPage.html:109
+#: .\templates\ebilling\BankPage.html:164
+#: .\templates\ebilling\UpdateSupplierPage.html:91
+msgid "Bank Name"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:93
+#: .\templates\ebilling\UpdateSupplierPage.html:94
+msgid "Nepal Bank Ltd. (NBL)"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:94
+#: .\templates\ebilling\UpdateSupplierPage.html:95
+msgid "Rastriya Banijya Bank Ltd. (RBB)"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:95
+#: .\templates\ebilling\UpdateSupplierPage.html:96
+msgid "Nabil Bank Ltd. (NABIL)"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:96
+#: .\templates\ebilling\UpdateSupplierPage.html:97
+msgid "Nepal Investment Bank Ltd. (NIBL)"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:97
+#: .\templates\ebilling\UpdateSupplierPage.html:98
+msgid "Himalayan Bank Ltd. (HBL)"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:98
+#: .\templates\ebilling\UpdateSupplierPage.html:99
+msgid "Nepal SBI Bank Ltd. (NSBI)"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:99
+#: .\templates\ebilling\UpdateSupplierPage.html:100
+msgid "Everest Bank Ltd. (EBL)"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:100
+#: .\templates\ebilling\UpdateSupplierPage.html:101
+msgid "NIC ASIA Bank Ltd. (NIC)"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:105
+#: .\templates\ebilling\UpdateSupplierPage.html:106
+msgid "IFSC Code"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:106
+#: .\templates\ebilling\UpdateSupplierPage.html:107
+msgid "Enter bank ifsc code"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:114
+#: .\templates\ebilling\UpdateSupplierPage.html:115
+msgid "Bank A/C No"
+msgstr ""
+
+#: .\templates\ebilling\AddSupplierPage.html:115
+#: .\templates\ebilling\UpdateSupplierPage.html:116
+msgid "Enter bacnk a/c no"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:3
+msgid "Bank Account Manangement"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:28
+msgid "Manage Bank Accounts"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:37
+msgid "Existing Bank Accounts"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:108
+#: .\templates\ebilling\BankPage.html:159
+msgid "Account Name"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:110
+msgid "A/C No"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:112
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:68
+#: .\templates\ebilling\SearchAndManageProductService.html:67
+#: .\templates\ebilling\TaxesPage.html:68
+#: .\templates\ebilling\TaxesPage.html:93
+msgid "Type"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:113
+#: .\templates\ebilling\BrandPage.html:55
+#: .\templates\ebilling\BrandPage.html:84
+#: .\templates\ebilling\BrandPageTest.html:55
+#: .\templates\ebilling\BrandPageTest.html:84
+#: .\templates\ebilling\DepartmentPage.html:55
+#: .\templates\ebilling\DepartmentPage.html:84
+#: .\templates\ebilling\DesignationPage.html:55
+#: .\templates\ebilling\DesignationPage.html:84
+#: .\templates\ebilling\ExpenseTypePage.html:55
+#: .\templates\ebilling\ExpenseTypePage.html:84
+#: .\templates\ebilling\GroupPage.html:111
+#: .\templates\ebilling\Homepage.html:630
+#: .\templates\ebilling\SearchAndManageClientsPage.html:75
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:76
+#: .\templates\ebilling\SearchAndManageProductService.html:80
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:81
+#: .\templates\ebilling\UnitPage.html:55 .\templates\ebilling\UnitPage.html:84
+msgid "Actions"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:136
+#: .\templates\ebilling\BankPage.html:268
+#: .\templates\ebilling\BankPage.html:286
+#: .\templates\ebilling\BrandPage.html:70
+#: .\templates\ebilling\BrandPage.html:173
+#: .\templates\ebilling\BrandPage.html:188
+#: .\templates\ebilling\BrandPageTest.html:70
+#: .\templates\ebilling\BrandPageTest.html:173
+#: .\templates\ebilling\BrandPageTest.html:188
+#: .\templates\ebilling\DepartmentPage.html:70
+#: .\templates\ebilling\DepartmentPage.html:173
+#: .\templates\ebilling\DepartmentPage.html:188
+#: .\templates\ebilling\DesignationPage.html:70
+#: .\templates\ebilling\DesignationPage.html:173
+#: .\templates\ebilling\DesignationPage.html:188
+#: .\templates\ebilling\DraftPurchasePage.html:325
+#: .\templates\ebilling\DraftSalePage.html:325
+#: .\templates\ebilling\ExpenseTypePage.html:70
+#: .\templates\ebilling\ExpenseTypePage.html:173
+#: .\templates\ebilling\ExpenseTypePage.html:188
+#: .\templates\ebilling\GroupPage.html:124
+#: .\templates\ebilling\GroupPage.html:231
+#: .\templates\ebilling\GroupPage.html:248
+#: .\templates\ebilling\UnitPage.html:70 .\templates\ebilling\UnitPage.html:173
+#: .\templates\ebilling\UnitPage.html:188
+msgid "Edit"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:138
+#: .\templates\ebilling\BankPage.html:269
+#: .\templates\ebilling\BankPage.html:287
+#: .\templates\ebilling\BrandPage.html:71
+#: .\templates\ebilling\BrandPage.html:174
+#: .\templates\ebilling\BrandPage.html:189
+#: .\templates\ebilling\BrandPageTest.html:71
+#: .\templates\ebilling\BrandPageTest.html:174
+#: .\templates\ebilling\BrandPageTest.html:189
+#: .\templates\ebilling\DepartmentPage.html:71
+#: .\templates\ebilling\DepartmentPage.html:174
+#: .\templates\ebilling\DepartmentPage.html:189
+#: .\templates\ebilling\DesignationPage.html:71
+#: .\templates\ebilling\DesignationPage.html:174
+#: .\templates\ebilling\DesignationPage.html:189
+#: .\templates\ebilling\DraftPurchasePage.html:325
+#: .\templates\ebilling\DraftSalePage.html:325
+#: .\templates\ebilling\ExpenseTypePage.html:71
+#: .\templates\ebilling\ExpenseTypePage.html:174
+#: .\templates\ebilling\ExpenseTypePage.html:189
+#: .\templates\ebilling\GroupPage.html:125
+#: .\templates\ebilling\GroupPage.html:232
+#: .\templates\ebilling\GroupPage.html:249
+#: .\templates\ebilling\UnitPage.html:71 .\templates\ebilling\UnitPage.html:174
+#: .\templates\ebilling\UnitPage.html:189
+msgid "Delete"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:169
+msgid "Account  No"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:178
+msgid "Credit"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:179
+msgid "Debit"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:193
+msgid "Add New Account"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:240
+msgid "Account Name Can't Be Empty"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:243
+msgid "Account No. Can't Be Empty"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:246
+msgid "Bank Name Can't Be Empty"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:258
+msgid "New Bank Added"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:276
+#: .\templates\ebilling\BrandPage.html:181
+#: .\templates\ebilling\BrandPageTest.html:181
+#: .\templates\ebilling\DepartmentPage.html:181
+#: .\templates\ebilling\DesignationPage.html:181
+#: .\templates\ebilling\ExpenseTypePage.html:181
+#: .\templates\ebilling\GroupPage.html:239
+#: .\templates\ebilling\UnitPage.html:181
+msgid "Data Updated"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:299
+#: .\templates\ebilling\BankPage.html:331
+#: .\templates\ebilling\BankPage.html:362
+#: .\templates\ebilling\BrandPage.html:201
+#: .\templates\ebilling\BrandPage.html:232
+#: .\templates\ebilling\BrandPage.html:263
+#: .\templates\ebilling\BrandPageTest.html:201
+#: .\templates\ebilling\BrandPageTest.html:232
+#: .\templates\ebilling\BrandPageTest.html:264
+#: .\templates\ebilling\DepartmentPage.html:201
+#: .\templates\ebilling\DepartmentPage.html:232
+#: .\templates\ebilling\DepartmentPage.html:263
+#: .\templates\ebilling\DesignationPage.html:201
+#: .\templates\ebilling\DesignationPage.html:232
+#: .\templates\ebilling\DesignationPage.html:263
+#: .\templates\ebilling\DraftPurchasePage.html:669
+#: .\templates\ebilling\DraftSalePage.html:565
+#: .\templates\ebilling\ExpenseTypePage.html:201
+#: .\templates\ebilling\ExpenseTypePage.html:232
+#: .\templates\ebilling\ExpenseTypePage.html:263
+#: .\templates\ebilling\GroupPage.html:261
+#: .\templates\ebilling\GroupPage.html:295
+#: .\templates\ebilling\GroupPage.html:326
+#: .\templates\ebilling\UnitPage.html:201
+#: .\templates\ebilling\UnitPage.html:232
+#: .\templates\ebilling\UnitPage.html:263
+msgid "Something went wrong"
+msgstr ""
+
+#: .\templates\ebilling\BankPage.html:357
+#: .\templates\ebilling\BrandPage.html:258
+#: .\templates\ebilling\BrandPageTest.html:259
+#: .\templates\ebilling\DepartmentPage.html:258
+#: .\templates\ebilling\DesignationPage.html:258
+#: .\templates\ebilling\ExpenseTypePage.html:258
+#: .\templates\ebilling\GroupPage.html:321
+#: .\templates\ebilling\UnitPage.html:258
+msgid "Data Deleted"
+msgstr ""
+
+#: .\templates\ebilling\Blueprint.html:3 .\templates\ebilling\LoginPage.html:3
+msgid "Login"
+msgstr ""
+
+#: .\templates\ebilling\Blueprint.html:22
+msgid "Forms"
+msgstr ""
+
+#: .\templates\ebilling\Blueprint.html:28
+msgid "Form Layouts"
+msgstr ""
+
+#: .\templates\ebilling\BrandPage.html:3
+msgid "Brands Manangement"
+msgstr ""
+
+#: .\templates\ebilling\BrandPage.html:28
+#: .\templates\ebilling\BrandPageTest.html:28
+msgid "Manage Brands"
+msgstr ""
+
+#: .\templates\ebilling\BrandPage.html:37
+#: .\templates\ebilling\BrandPageTest.html:37
+msgid "Existing Brands"
+msgstr ""
+
+#: .\templates\ebilling\BrandPage.html:49
+#: .\templates\ebilling\BrandPage.html:82
+#: .\templates\ebilling\BrandPageTest.html:49
+#: .\templates\ebilling\BrandPageTest.html:82
+#: .\templates\ebilling\DepartmentPage.html:49
+#: .\templates\ebilling\DepartmentPage.html:82
+#: .\templates\ebilling\DesignationPage.html:49
+#: .\templates\ebilling\DesignationPage.html:82
+#: .\templates\ebilling\ExpenseTypePage.html:49
+#: .\templates\ebilling\ExpenseTypePage.html:82
+#: .\templates\ebilling\TaxesPage.html:60
+#: .\templates\ebilling\TaxesPage.html:90 .\templates\ebilling\UnitPage.html:49
+#: .\templates\ebilling\UnitPage.html:82 .\templates\ebilling\user.html:59
+msgid "ID"
+msgstr ""
+
+#: .\templates\ebilling\BrandPage.html:52
+#: .\templates\ebilling\BrandPage.html:83
+#: .\templates\ebilling\BrandPage.html:99
+#: .\templates\ebilling\BrandPageTest.html:52
+#: .\templates\ebilling\BrandPageTest.html:83
+#: .\templates\ebilling\BrandPageTest.html:99
+#: .\templates\ebilling\GroupPage.html:145
+msgid "Brand Name"
+msgstr ""
+
+#: .\templates\ebilling\BrandPage.html:100
+msgid "Enter Brand name"
+msgstr ""
+
+#: .\templates\ebilling\BrandPage.html:103
+#: .\templates\ebilling\BrandPageTest.html:103
+#: .\templates\ebilling\DepartmentPage.html:103
+#: .\templates\ebilling\DesignationPage.html:103
+#: .\templates\ebilling\ExpenseTypePage.html:103
+#: .\templates\ebilling\GroupPage.html:157
+#: .\templates\ebilling\UnitPage.html:103
+msgid "Is Enabled"
+msgstr ""
+
+#: .\templates\ebilling\BrandPage.html:110
+#: .\templates\ebilling\BrandPageTest.html:110
+#: .\templates\ebilling\DepartmentPage.html:110
+#: .\templates\ebilling\DesignationPage.html:110
+#: .\templates\ebilling\ExpenseTypePage.html:110
+#: .\templates\ebilling\GroupPage.html:164
+#: .\templates\ebilling\UnitPage.html:110
+#: .\templates\ebilling\add_edit_tax.html:84
+msgid "Add"
+msgstr ""
+
+#: .\templates\ebilling\BrandPage.html:154
+#: .\templates\ebilling\BrandPageTest.html:154
+#: .\templates\ebilling\DepartmentPage.html:154
+#: .\templates\ebilling\DesignationPage.html:154
+#: .\templates\ebilling\GroupPage.html:210
+msgid "Brand Name Can't Be Empty"
+msgstr ""
+
+#: .\templates\ebilling\BrandPage.html:166
+#: .\templates\ebilling\DepartmentPage.html:166
+#: .\templates\ebilling\DesignationPage.html:166
+#: .\templates\ebilling\ExpenseTypePage.html:166
+#: .\templates\ebilling\UnitPage.html:166
+msgid "New Unit Added"
+msgstr ""
+
+#: .\templates\ebilling\BrandPageTest.html:3
+msgid "Brand Manangement"
+msgstr ""
+
+#: .\templates\ebilling\BrandPageTest.html:100
+msgid "Enter brand name"
+msgstr ""
+
+#: .\templates\ebilling\BrandPageTest.html:166
+msgid "New Brand Added"
+msgstr ""
+
+#: .\templates\ebilling\DepartmentPage.html:3
+msgid "Department Manangement"
+msgstr ""
+
+#: .\templates\ebilling\DepartmentPage.html:28
+msgid "Manage Departments"
+msgstr ""
+
+#: .\templates\ebilling\DepartmentPage.html:37
+msgid "Existing Departments"
+msgstr ""
+
+#: .\templates\ebilling\DepartmentPage.html:52
+#: .\templates\ebilling\DepartmentPage.html:83
+#: .\templates\ebilling\DepartmentPage.html:99
+msgid "Department Name"
+msgstr ""
+
+#: .\templates\ebilling\DepartmentPage.html:100
+msgid "Enter department name"
+msgstr ""
+
+#: .\templates\ebilling\DesignationPage.html:3
+msgid "Designation Manangement"
+msgstr ""
+
+#: .\templates\ebilling\DesignationPage.html:28
+msgid "Manage Designations"
+msgstr ""
+
+#: .\templates\ebilling\DesignationPage.html:37
+msgid "Existing Designations"
+msgstr ""
+
+#: .\templates\ebilling\DesignationPage.html:52
+#: .\templates\ebilling\DesignationPage.html:83
+#: .\templates\ebilling\DesignationPage.html:99
+msgid "Designation Name"
+msgstr ""
+
+#: .\templates\ebilling\DesignationPage.html:100
+msgid "Enter designation name"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:5
+msgid "Edit Purchase"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:7
+msgid "Draft New Purchase"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:35
+msgid "Purchase Bill"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:51
+msgid "Purchase Bill Information"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:64
+#: .\templates\ebilling\DraftSalePage.html:65
+msgid "Purchase Type"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:67
+#: .\templates\ebilling\DraftSalePage.html:68
+msgid "Non VAT"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:68
+#: .\templates\ebilling\DraftSalePage.html:69
+msgid "Bill Of Supply"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:72
+#: .\templates\ebilling\DraftSalePage.html:73
+msgid "Bill Data"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:87
+#: .\templates\ebilling\DraftSalePage.html:88
+msgid "Payment Terms"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:97
+#: .\templates\ebilling\DraftPurchasePage.html:110
+#: .\templates\ebilling\DraftPurchasePage.html:111
+#: .\templates\ebilling\DraftSalePage.html:98
+msgid "Due Data"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:114
+#: .\templates\ebilling\DraftSalePage.html:115
+msgid "Purchase Bill No"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:120
+#: .\templates\ebilling\DraftSalePage.html:121
+msgid "Purchase Order No"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:126
+#: .\templates\ebilling\DraftSalePage.html:127
+msgid "Purchase Order Data"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:131
+#: .\templates\ebilling\DraftSalePage.html:132
+msgid "E-Way Bill No"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:147
+msgid "Particulars"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:147
+#: .\templates\ebilling\DraftSalePage.html:148
+msgid "Add New"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:154
+#: .\templates\ebilling\DraftSalePage.html:155
+#: .\templates\ebilling\SearchAndManageProductService.html:70
+msgid "Item Name"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:155
+#: .\templates\ebilling\DraftSalePage.html:156
+msgid "Quantity"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:156
+#: .\templates\ebilling\DraftSalePage.html:157
+msgid "Unit"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:157
+#: .\templates\ebilling\DraftSalePage.html:158
+msgid "Price/Unit"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:158
+#: .\templates\ebilling\DraftSalePage.html:159
+#, python-format
+msgid "Disc(%%)"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:159
+#: .\templates\ebilling\DraftSalePage.html:160
+#, python-format
+msgid "Tax(%%)"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:161
+#: .\templates\ebilling\DraftSalePage.html:162
+#: .\templates\ebilling\user.html:64
+msgid "Action"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:169
+#: .\templates\ebilling\DraftSalePage.html:170
+msgid "SUBTOTAL(रु)"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:174
+#: .\templates\ebilling\DraftSalePage.html:175
+#, python-format
+msgid "TAX 13%%(रु)"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:179
+#: .\templates\ebilling\DraftSalePage.html:180
+msgid "GRAND TOTAL(रु)"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:215
+#: .\templates\ebilling\DraftSalePage.html:216
+msgid "Transaction ID"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:221
+#: .\templates\ebilling\DraftSalePage.html:222
+msgid "Amount Paid"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:227
+#: .\templates\ebilling\DraftSalePage.html:228
+msgid "Balance"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:295
+msgid "No particulars added"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:302
+#: .\templates\ebilling\DraftPurchasePage.html:544
+#: .\templates\ebilling\DraftSalePage.html:302
+#: .\templates\ebilling\DraftSalePage.html:448
+msgid "Enter quanity"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:303
+#: .\templates\ebilling\DraftPurchasePage.html:549
+#: .\templates\ebilling\DraftSalePage.html:303
+#: .\templates\ebilling\DraftSalePage.html:453
+msgid "Enter unit"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:304
+#: .\templates\ebilling\DraftPurchasePage.html:555
+#: .\templates\ebilling\DraftSalePage.html:304
+#: .\templates\ebilling\DraftSalePage.html:459
+msgid "Enter price/unit"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:306
+#: .\templates\ebilling\DraftSalePage.html:306
+#, python-format
+msgid "Enter discount(%%)"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:309
+#: .\templates\ebilling\DraftSalePage.html:309
+#, python-format
+msgid "Enter vat(%%)"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:314
+#: .\templates\ebilling\DraftPurchasePage.html:326
+#: .\templates\ebilling\DraftSalePage.html:314
+#: .\templates\ebilling\DraftSalePage.html:326
+msgid "Cancel"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:326
+#: .\templates\ebilling\DraftSalePage.html:326
+msgid "Update"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:559
+#: .\templates\ebilling\DraftSalePage.html:463
+msgid "Enter Discount"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:566
+#: .\templates\ebilling\DraftSalePage.html:470
+msgid "Enter tax"
+msgstr ""
+
+#: .\templates\ebilling\DraftPurchasePage.html:659
+#: .\templates\ebilling\DraftSalePage.html:555
+msgid "New Purchase Bill Created"
+msgstr ""
+
+#: .\templates\ebilling\DraftSalePage.html:5
+msgid "Edit Sales Bill"
+msgstr ""
+
+#: .\templates\ebilling\DraftSalePage.html:7
+msgid "Draft New Sales "
+msgstr ""
+
+#: .\templates\ebilling\DraftSalePage.html:36
+msgid "Sales Bill"
+msgstr ""
+
+#: .\templates\ebilling\DraftSalePage.html:52
+msgid "Sales Bill Information"
+msgstr ""
+
+#: .\templates\ebilling\DraftSalePage.html:111
+msgid "Place Of Supply"
+msgstr ""
+
+#: .\templates\ebilling\ExpenseTypePage.html:3
+msgid "Expense Category Manangement"
+msgstr ""
+
+#: .\templates\ebilling\ExpenseTypePage.html:28
+msgid "Manage Expense Category"
+msgstr ""
+
+#: .\templates\ebilling\ExpenseTypePage.html:37
+msgid "Existing Expense Categories"
+msgstr ""
+
+#: .\templates\ebilling\ExpenseTypePage.html:154
+msgid "Expense Type Name Can't Be Empty"
+msgstr ""
+
+#: .\templates\ebilling\GroupPage.html:3
+msgid "Groups Manangement"
+msgstr ""
+
+#: .\templates\ebilling\GroupPage.html:28
+msgid "Manage Groups"
+msgstr ""
+
+#: .\templates\ebilling\GroupPage.html:37
+msgid "Existing Groups"
+msgstr ""
+
+#: .\templates\ebilling\GroupPage.html:108
+msgid "Group Name"
+msgstr ""
+
+#: .\templates\ebilling\GroupPage.html:110
+msgid "HSN/SAC"
+msgstr ""
+
+#: .\templates\ebilling\GroupPage.html:146
+msgid "Enter group name"
+msgstr ""
+
+#: .\templates\ebilling\GroupPage.html:153
+msgid "HSN/SAC Code Name"
+msgstr ""
+
+#: .\templates\ebilling\GroupPage.html:222
+msgid "New Group Added"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:3 .\templates\ebilling\header.html:367
+#: .\templates\ebilling\sidebar.html:24
+msgid "Dashboard"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:27 .\templates\ebilling\Homepage.html:433
+msgid "Total Orders"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:28
+msgid "867"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:42
+msgid "Total Income"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:43
+msgid "$52,945"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:57
+msgid "Total Users"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:58
+msgid "24.5"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:72
+msgid "Comments"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:73
+msgid "869"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:99
+msgid "Sales Target"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:107
+msgid "2248"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:108
+msgid "2,800"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:108
+msgid "target"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:111
+msgid "Marketing Sales"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:134
+msgid "Sales Report"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:150
+msgid "Overall Sales Performance"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:152
+msgid "84,126.5"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:153
+msgid "vs last month"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:164
+msgid "Top Sales Locations"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:165
+msgid "25.860"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:166
+msgid "Our Most Customers in US"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:171
+msgid "Massive"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:176
+msgid "Large"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:181
+msgid "Medium"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:186
+msgid "Small"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:208 .\templates\ebilling\header.html:79
+msgid "New Customers"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:384
+msgid "Store Metrics"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:397
+msgid "Total Products"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:398
+msgid "856"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:409
+msgid "Total Customers"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:410
+msgid "45,241"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:421
+msgid "Total Categories"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:422
+msgid "98"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:434
+msgid "124"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:446
+msgid "55"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:462
+msgid "Top Products"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:614
+msgid "Recent Orders"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:625
+msgid "Tracking ID"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:626
+msgid "Products Name"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:628
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:79
+msgid "Status"
+msgstr ""
+
+#: .\templates\ebilling\Homepage.html:629
+msgid "Price"
+msgstr ""
+
+#: .\templates\ebilling\LoginPage.html:29
+msgid "Employee ID"
+msgstr ""
+
+#: .\templates\ebilling\LoginPage.html:31
+msgid "User ID"
+msgstr ""
+
+#: .\templates\ebilling\LoginPage.html:34
+#: .\templates\ebilling\LoginPage.html:37
+#: .\templates\ebilling\UserFromPage.html:95
+msgid "Enter Password"
+msgstr ""
+
+#: .\templates\ebilling\LoginPage.html:45
+msgid "Remember Me"
+msgstr ""
+
+#: .\templates\ebilling\LoginPage.html:48
+msgid "Forgot Password"
+msgstr ""
+
+#: .\templates\ebilling\LoginPage.html:52
+msgid "Sign in"
+msgstr ""
+
+#: .\templates\ebilling\LoginPage.html:66 .\templates\ebilling\footer.html:4
+msgid "Copyright © 2021. All right reserved"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageClientsPage.html:3
+#: .\templates\ebilling\SearchAndManageClientsPage.html:28
+#: .\templates\ebilling\sidebar.html:101
+msgid "Search & Manage Clients"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageClientsPage.html:40
+msgid "New Client"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageClientsPage.html:47
+msgid "Client List"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageClientsPage.html:57
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:57
+msgid "Search by name/id/contact"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageClientsPage.html:59
+msgid "Search Client"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageClientsPage.html:66
+msgid "Client ID"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageClientsPage.html:67
+msgid "Client Name"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageClientsPage.html:68
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:70
+#: .\templates\ebilling\UpdateCompanyPage.html:220
+msgid "Address"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageClientsPage.html:69
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:69
+msgid "Contact No"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageClientsPage.html:70
+msgid "Provice"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageClientsPage.html:73
+msgid "A/c Balance"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:3
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:28
+#: .\templates\ebilling\sidebar.html:118
+msgid "Search & Manage Expenses"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:40
+msgid "New Expense"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:47
+msgid "Latest Expenses"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:59
+msgid "Search Expense"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:66
+#: .\templates\ebilling\SearchAndManageProductService.html:66
+msgid "S.No."
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageExpensesPage.html:73
+msgid "Pay Ref. No."
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:3
+#: .\templates\ebilling\SearchAndManageProductService.html:28
+msgid "Search & Manage Product/Service"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:39
+msgid "New Product"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:40
+msgid "New Service"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:47
+msgid "Product & Service List"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:57
+msgid "Search Product/Service"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:59
+msgid "Search Item"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:69
+#: .\templates\ebilling\addProductPage.html:184
+#: .\templates\ebilling\addProductPage.html:367
+msgid "Brand"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:71
+msgid "Print Name"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:72
+msgid "UoM"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:73
+#: .\templates\ebilling\addProductPage.html:163
+#: .\templates\ebilling\addProductPage.html:346
+msgid "Purchase Price"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:74
+#: .\templates\ebilling\addProductPage.html:159
+#: .\templates\ebilling\addProductPage.html:342
+msgid "Sale Price"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:75
+#: .\templates\ebilling\addProductPage.html:167
+#: .\templates\ebilling\addProductPage.html:350
+msgid "Min. Sale Price"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:76
+#: .\templates\ebilling\addProductPage.html:171
+#: .\templates\ebilling\addProductPage.html:354
+msgid "M.R.P"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:77
+msgid "HSN"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageProductService.html:79
+#, python-format
+msgid "Sale Discount(%%)"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:3
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:28
+msgid "Search & Manage Supppliers"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:40
+msgid "New Suppplier"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:47
+msgid "Supppliers List"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:59
+msgid "Search Suppplier"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:66
+msgid "Supplier ID"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:74
+msgid "Pincode"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:77
+msgid "PAN No."
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:80
+msgid "Account Balance"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:111
+msgid "Active"
+msgstr ""
+
+#: .\templates\ebilling\SearchAndManageSupplierPage.html:113
+msgid "Inactive"
+msgstr ""
+
+#: .\templates\ebilling\SettingsPage.html:3
+#: .\templates\ebilling\SettingsPage.html:28
+#: .\templates\ebilling\header.html:364 .\templates\ebilling\sidebar.html:226
+msgid "Settings"
+msgstr ""
+
+#: .\templates\ebilling\SettingsPage.html:42
+msgid "TAX"
+msgstr ""
+
+#: .\templates\ebilling\SettingsPage.html:43
+msgid "Fixed, normal inclusive and compound tax rates"
+msgstr ""
+
+#: .\templates\ebilling\SettingsPage.html:51
+#: .\templates\ebilling\SettingsPage.html:60
+#: .\templates\ebilling\SettingsPage.html:69
+msgid "Card title"
+msgstr ""
+
+#: .\templates\ebilling\SettingsPage.html:52
+#: .\templates\ebilling\SettingsPage.html:61
+#: .\templates\ebilling\SettingsPage.html:70
+msgid ""
+"Some quick example text to build on the card title and make up the bulk of "
+"the card's content"
+msgstr ""
+
+#: .\templates\ebilling\SettingsPage.html:52
+#: .\templates\ebilling\SettingsPage.html:61
+#: .\templates\ebilling\SettingsPage.html:70
+msgid "Go somewhere"
+msgstr ""
+
+#: .\templates\ebilling\Switcher.html:8
+msgid "Theme Customizer"
+msgstr ""
+
+#: .\templates\ebilling\Switcher.html:12
+msgid "Gaussian Texture"
+msgstr ""
+
+#: .\templates\ebilling\Switcher.html:24
+msgid "Gradient Background"
+msgstr ""
+
+#: .\templates\ebilling\TaxesPage.html:3 .\templates\ebilling\TaxesPage.html:28
+msgid "Taxes"
+msgstr ""
+
+#: .\templates\ebilling\TaxesPage.html:34
+msgid "Add Tax"
+msgstr ""
+
+#: .\templates\ebilling\TaxesPage.html:63
+#: .\templates\ebilling\TaxesPage.html:91
+msgid "Tax"
+msgstr ""
+
+#: .\templates\ebilling\TaxesPage.html:66
+#: .\templates\ebilling\TaxesPage.html:92
+#: .\templates\ebilling\add_edit_tax.html:54
+#: .\templates\ebilling\add_edit_tax.html:56
+msgid "Rate"
+msgstr ""
+
+#: .\templates\ebilling\UnitPage.html:3
+msgid "Unit Manangement"
+msgstr ""
+
+#: .\templates\ebilling\UnitPage.html:28
+msgid "Manage Unit"
+msgstr ""
+
+#: .\templates\ebilling\UnitPage.html:37
+msgid "Existing Units"
+msgstr ""
+
+#: .\templates\ebilling\UnitPage.html:52 .\templates\ebilling\UnitPage.html:83
+#: .\templates\ebilling\UnitPage.html:99
+msgid "Unit Name"
+msgstr ""
+
+#: .\templates\ebilling\UnitPage.html:100
+msgid "Enter unit name"
+msgstr ""
+
+#: .\templates\ebilling\UnitPage.html:154
+msgid "Unit Name Can't Be Empty"
+msgstr ""
+
+#: .\templates\ebilling\UpdateClientPage.html:3
+#: .\templates\ebilling\UpdateClientPage.html:28
+msgid "Update Client"
+msgstr ""
+
+#: .\templates\ebilling\UpdateClientPage.html:42
+msgid "Update Client Details"
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:3
+#: .\templates\ebilling\UpdateCompanyPage.html:28
+msgid "Update Company Details"
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:22
+#: .\templates\ebilling\sidebar.html:218
+msgid "Company"
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:61
+#: .\templates\ebilling\UpdateCompanyPage.html:147
+msgid "Website"
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:65
+#: .\templates\ebilling\UpdateCompanyPage.html:156
+msgid "PAN/VAT No"
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:71
+#: .\templates\ebilling\UpdateCompanyPage.html:165
+msgid "Reg. No."
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:76
+#: .\templates\ebilling\UpdateCompanyPage.html:173
+msgid "Reg. Date"
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:81
+#: .\templates\ebilling\UpdateCompanyPage.html:138
+msgid "Phone"
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:99
+#: .\templates\ebilling\UpdateCompanyPage.html:211
+msgid "Pin Code"
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:103
+msgid "Paper Size"
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:119
+msgid "Company Name"
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:239
+msgid "Company Logo"
+msgstr ""
+
+#: .\templates\ebilling\UpdateCompanyPage.html:250
+msgid "Save Changes"
+msgstr ""
+
+#: .\templates\ebilling\UpdateExpensePage.html:3
+#: .\templates\ebilling\UpdateExpensePage.html:28
+msgid "Update Expense"
+msgstr ""
+
+#: .\templates\ebilling\UpdateExpensePage.html:44
+#: .\templates\ebilling\UpdateExpensePage.html:49
+msgid "Looks good"
+msgstr ""
+
+#: .\templates\ebilling\UpdateExpensePage.html:68
+msgid "Please select a valid Expense type"
+msgstr ""
+
+#: .\templates\ebilling\UpdateExpensePage.html:81
+msgid "Please select a Pay mode"
+msgstr ""
+
+#: .\templates\ebilling\UpdateExpensePage.html:86
+msgid "Please provide a valid Payment Receipt No"
+msgstr ""
+
+#: .\templates\ebilling\UpdateSupplierPage.html:3
+msgid "Update Supplier Detail"
+msgstr ""
+
+#: .\templates\ebilling\UpdateSupplierPage.html:28
+msgid "Update Supplier Info"
+msgstr ""
+
+#: .\templates\ebilling\UpdateSupplierPage.html:42
+msgid "Update Supplier Details"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:53
+#: .\templates\ebilling\UserFromPage.html:54
+msgid "First Name"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:58
+#: .\templates\ebilling\UserFromPage.html:59
+msgid "Last Name"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:64
+#: .\templates\ebilling\UserFromPage.html:65 .\templates\ebilling\user.html:60
+msgid "User Name"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:69
+msgid "email"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:77
+msgid "Old Password"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:78
+msgid "Enter Your Old Password"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:82
+msgid "New Password"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:83
+msgid "Enter New Password"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:86
+msgid "New Password confirmation"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:87
+msgid "Enter New Password again"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:94
+msgid "Password"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:99
+msgid "Password confirmation"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:100
+msgid "Enter Password again"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:110
+msgid "User Active Status"
+msgstr ""
+
+#: .\templates\ebilling\UserFromPage.html:116
+msgid "Permission"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:5
+msgid "Edit Product"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:7
+msgid "Add New Product "
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:34
+msgid "Product Manangement"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:46
+msgid "Update Product Details"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:55
+#: .\templates\ebilling\addProductPage.html:239
+msgid "Product Title"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:56
+#: .\templates\ebilling\addProductPage.html:240
+msgid "Enter product title"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:60
+#: .\templates\ebilling\addProductPage.html:244
+msgid "Enter print product title"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:63
+#: .\templates\ebilling\addProductPage.html:247
+msgid "Description"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:70
+#: .\templates\ebilling\addProductPage.html:254
+msgid "Opening Stock"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:74
+msgid "Opening Stock Value"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:99
+#: .\templates\ebilling\addProductPage.html:283
+msgid "Serial No"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:113
+#: .\templates\ebilling\addProductPage.html:297
+msgid "Print Description"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:117
+#: .\templates\ebilling\addProductPage.html:301
+msgid "One Click Sale"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:122
+#: .\templates\ebilling\addProductPage.html:306
+msgid "Not For Sale"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:134
+#: .\templates\ebilling\addProductPage.html:318
+msgid "Print Serial No"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:138
+#: .\templates\ebilling\addProductPage.html:322
+msgid "Enable Tracking"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:149
+#: .\templates\ebilling\addProductPage.html:333
+msgid "Upload Product Pic"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:193
+#: .\templates\ebilling\addProductPage.html:376
+msgid "Item Type"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:202
+#: .\templates\ebilling\addProductPage.html:385
+msgid "UNIT"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:215
+#: .\templates\ebilling\addProductPage.html:398
+msgid "Save Product"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:230
+msgid "Add New Product"
+msgstr ""
+
+#: .\templates\ebilling\addProductPage.html:243
+msgid "Print Product Title"
+msgstr ""
+
+#: .\templates\ebilling\add_edit_tax.html:3
+#: .\templates\ebilling\add_edit_tax.html:28
+msgid "Manage Taxes"
+msgstr ""
+
+#: .\templates\ebilling\add_edit_tax.html:43
+msgid "Add/Update Taxes"
+msgstr ""
+
+#: .\templates\ebilling\add_edit_tax.html:47
+msgid "Name"
+msgstr ""
+
+#: .\templates\ebilling\add_edit_tax.html:50
+msgid "Tax Name eg: VAT"
+msgstr ""
+
+#: .\templates\ebilling\add_edit_tax.html:60
+msgid "Tax Type"
+msgstr ""
+
+#: .\templates\ebilling\add_edit_tax.html:63
+msgid "Choose"
+msgstr ""
+
+#: .\templates\ebilling\add_edit_tax.html:73
+msgid "Enabled"
+msgstr ""
+
+#: .\templates\ebilling\backup_restore.html:3
+#: .\templates\ebilling\backup_restore.html:33
+#: .\templates\ebilling\backup_restore.html:50
+#: .\templates\ebilling\sidebar.html:244
+msgid "Back Up & Restore"
+msgstr ""
+
+#: .\templates\ebilling\backup_restore.html:58
+msgid "Generate Backup"
+msgstr ""
+
+#: .\templates\ebilling\backup_restore.html:59
+msgid "Export Backup"
+msgstr ""
+
+#: .\templates\ebilling\backup_restore.html:62
+#: .\templates\ebilling\backup_restore.html:66
+msgid "Restore Backup"
+msgstr ""
+
+#: .\templates\ebilling\base.html:4
+msgid "GMC-Nepal"
+msgstr ""
+
+#: .\templates\ebilling\header.html:11
+msgid "Type to search"
+msgstr ""
+
+#: .\templates\ebilling\header.html:31
+msgid "Teams"
+msgstr ""
+
+#: .\templates\ebilling\header.html:36
+msgid "Projects"
+msgstr ""
+
+#: .\templates\ebilling\header.html:41
+msgid "Tasks"
+msgstr ""
+
+#: .\templates\ebilling\header.html:46
+msgid "Feeds"
+msgstr ""
+
+#: .\templates\ebilling\header.html:51
+msgid "Files"
+msgstr ""
+
+#: .\templates\ebilling\header.html:56
+msgid "Alerts"
+msgstr ""
+
+#: .\templates\ebilling\header.html:63
+msgid "7"
+msgstr ""
+
+#: .\templates\ebilling\header.html:69
+msgid "Notifications"
+msgstr ""
+
+#: .\templates\ebilling\header.html:70 .\templates\ebilling\header.html:183
+msgid "Marks all as read"
+msgstr ""
+
+#: .\templates\ebilling\header.html:79
+msgid "14 Sec ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:80
+msgid "5 new user registered"
+msgstr ""
+
+#: .\templates\ebilling\header.html:89
+msgid "New Orders"
+msgstr ""
+
+#: .\templates\ebilling\header.html:89
+msgid "2 min ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:90
+msgid "You have recived new orders"
+msgstr ""
+
+#: .\templates\ebilling\header.html:99
+msgid "24 PDF File"
+msgstr ""
+
+#: .\templates\ebilling\header.html:99
+msgid "19 min ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:100
+msgid "The pdf files generated"
+msgstr ""
+
+#: .\templates\ebilling\header.html:109
+msgid "Time Response"
+msgstr ""
+
+#: .\templates\ebilling\header.html:109
+msgid "28 min ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:110
+msgid "5.1 min avarage time response"
+msgstr ""
+
+#: .\templates\ebilling\header.html:119
+msgid "New Product Approved"
+msgstr ""
+
+#: .\templates\ebilling\header.html:119 .\templates\ebilling\header.html:248
+#: .\templates\ebilling\header.html:281
+msgid "2 hrs ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:120
+msgid "Your new product has approved"
+msgstr ""
+
+#: .\templates\ebilling\header.html:129
+msgid "New Comments"
+msgstr ""
+
+#: .\templates\ebilling\header.html:129 .\templates\ebilling\header.html:259
+msgid "4 hrs ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:130
+msgid "New customer comments recived"
+msgstr ""
+
+#: .\templates\ebilling\header.html:139
+msgid "Your item is shipped"
+msgstr ""
+
+#: .\templates\ebilling\header.html:139
+msgid "5 hrs ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:140
+msgid "Successfully shipped your item"
+msgstr ""
+
+#: .\templates\ebilling\header.html:149
+msgid "New 24 authors"
+msgstr ""
+
+#: .\templates\ebilling\header.html:149
+msgid "1 day ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:150
+msgid "24 new authors joined last week"
+msgstr ""
+
+#: .\templates\ebilling\header.html:159
+msgid "Defense Alerts"
+msgstr ""
+
+#: .\templates\ebilling\header.html:159
+msgid "2 weeks ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:160
+#, python-format
+msgid "45%% less alerts last 4 weeks"
+msgstr ""
+
+#: .\templates\ebilling\header.html:166
+msgid "View All Notifications"
+msgstr ""
+
+#: .\templates\ebilling\header.html:176
+msgid "8"
+msgstr ""
+
+#: .\templates\ebilling\header.html:182
+msgid "Messages"
+msgstr ""
+
+#: .\templates\ebilling\header.html:193
+msgid "Daisy Anderson"
+msgstr ""
+
+#: .\templates\ebilling\header.html:193
+msgid "5 sec ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:194
+msgid "The standard chunk of lorem"
+msgstr ""
+
+#: .\templates\ebilling\header.html:204
+msgid "Althea Cabardo"
+msgstr ""
+
+#: .\templates\ebilling\header.html:204
+msgid "14 sec ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:205
+msgid "Many desktop publishing packages"
+msgstr ""
+
+#: .\templates\ebilling\header.html:215
+msgid "Oscar Garner"
+msgstr ""
+
+#: .\templates\ebilling\header.html:215
+msgid "8 min ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:216 .\templates\ebilling\header.html:282
+msgid "Various versions have evolved over"
+msgstr ""
+
+#: .\templates\ebilling\header.html:226
+msgid "Katherine Pechon"
+msgstr ""
+
+#: .\templates\ebilling\header.html:226
+msgid "15 min ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:227
+msgid "Making this the first true generator"
+msgstr ""
+
+#: .\templates\ebilling\header.html:237
+msgid "Amelia Doe"
+msgstr ""
+
+#: .\templates\ebilling\header.html:237
+msgid "22 min ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:238
+msgid "Duis aute irure dolor in reprehenderit"
+msgstr ""
+
+#: .\templates\ebilling\header.html:248
+msgid "Cristina Jhons"
+msgstr ""
+
+#: .\templates\ebilling\header.html:249
+msgid "The passage is attributed to an unknown"
+msgstr ""
+
+#: .\templates\ebilling\header.html:259
+msgid "James Caviness"
+msgstr ""
+
+#: .\templates\ebilling\header.html:260
+msgid "The point of using Lorem"
+msgstr ""
+
+#: .\templates\ebilling\header.html:270
+msgid "Peter Costanzo"
+msgstr ""
+
+#: .\templates\ebilling\header.html:270
+msgid "6 hrs ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:271
+msgid "It was popularised in the 1960s"
+msgstr ""
+
+#: .\templates\ebilling\header.html:281
+msgid "David Buckley"
+msgstr ""
+
+#: .\templates\ebilling\header.html:292
+msgid "Thomas Wheeler"
+msgstr ""
+
+#: .\templates\ebilling\header.html:292
+msgid "2 days ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:293
+msgid "If you are going to use a passage"
+msgstr ""
+
+#: .\templates\ebilling\header.html:303
+msgid "Johnny Seitz"
+msgstr ""
+
+#: .\templates\ebilling\header.html:303
+msgid "5 days ago"
+msgstr ""
+
+#: .\templates\ebilling\header.html:304
+msgid "All the Lorem Ipsum generators"
+msgstr ""
+
+#: .\templates\ebilling\header.html:310
+msgid "View All Messages"
+msgstr ""
+
+#: .\templates\ebilling\header.html:362
+msgid "Profile"
+msgstr ""
+
+#: .\templates\ebilling\header.html:370
+msgid "Earnings"
+msgstr ""
+
+#: .\templates\ebilling\header.html:372
+msgid "Downloads"
+msgstr ""
+
+#: .\templates\ebilling\header.html:378
+msgid "Logout"
+msgstr ""
+
+#: .\templates\ebilling\history.html:3 .\templates\ebilling\history.html:28
+#: .\templates\ebilling\sidebar.html:235
+msgid "History"
+msgstr ""
+
+#: .\templates\ebilling\history.html:37
+msgid "History List"
+msgstr ""
+
+#: .\templates\ebilling\history.html:49 .\templates\ebilling\sidebar.html:209
+#: .\templates\ebilling\user.html:3 .\templates\ebilling\user.html:28
+msgid "User"
+msgstr ""
+
+#: .\templates\ebilling\history.html:51
+msgid "Task"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:11
+msgid "G-Billing Soft"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:30
+msgid "Bills"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:36 .\templates\ebilling\sidebar.html:184
+msgid "Sales"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:39
+msgid "Products"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:41
+msgid "Product Details"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:43
+msgid "Add New Products"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:45
+msgid "Orders"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:58 .\templates\ebilling\sidebar.html:191
+msgid "Purchase"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:61
+msgid "Add Purchase"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:63
+msgid "Search & Manage Purchase"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:65
+msgid "Add Supplier"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:67
+msgid "Search & Manage Suppliers"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:76 .\templates\ebilling\sidebar.html:140
+msgid "Miscellaneous"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:85
+msgid "Banking"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:95
+msgid "Client"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:99
+msgid "Add Client"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:113
+msgid "Expense"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:129
+msgid "Masters"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:133
+msgid "Add Service"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:134
+msgid "Search & Manage Items"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:136
+msgid "Brand Master"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:137
+msgid "Group Master"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:138
+msgid "Bank Master"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:142
+msgid "Unit Master"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:143
+msgid "Expense Master"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:144
+msgid "Department Master"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:145
+msgid "Designation Master"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:160
+msgid "Reports"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:163
+msgid "Clients"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:165
+msgid "Amount Due"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:166 .\templates\ebilling\sidebar.html:174
+msgid "Payment History"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:170
+msgid "Suppliers"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:173
+msgid "AccountBalance"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:178
+msgid "Expenses"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:180
+msgid "Search Expenses"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:186 .\templates\ebilling\sidebar.html:193
+msgid "Level Two"
+msgstr ""
+
+#: .\templates\ebilling\sidebar.html:253
+msgid "Support"
+msgstr ""
+
+#: .\templates\ebilling\user.html:39
+msgid "Add User"
+msgstr ""
+
+#: .\templates\ebilling\user.html:47
+msgid "User List"
+msgstr ""
+
+#: .\templates\ebilling\user.html:62
+msgid "Role"
+msgstr ""
+
+#: .\templates\ebilling\user.html:63
+msgid "Last Login"
+msgstr ""
